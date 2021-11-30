@@ -1,0 +1,28 @@
+[
+  {
+    "level": 1,
+    "words": [
+      "cat",
+      "act"
+    ],
+    "letters": "cat"
+  },
+  {
+    "level": 2,
+    "words": [
+      "won",
+      "own",
+      "now"
+    ],
+    "letters": "won"
+  },
+  {
+    "level": 3,
+    "words": [
+      "ear",
+      "are",
+      "era"
+    ],
+    "letters": "ear"
+  }
+]

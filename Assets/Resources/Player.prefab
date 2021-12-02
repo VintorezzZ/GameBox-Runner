@@ -7287,8 +7287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff506f4748dece54fbb4c0d8976fc541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  god: 0
-  canMove: 0
+  god: 1
+  canMove: 1
   score: 0
   moveController: {fileID: 8727077871878123062}
   _animator: {fileID: 6818908830941468443}
@@ -7315,7 +7315,8 @@ MonoBehaviour:
   maxSpeed: 20
   strafeSpeed: 6
   acceleration: 0.1
-  speed: 0
+  targetLane: 0
+  currentLane: 1
 --- !u!114 &-2904332653228642779
 MonoBehaviour:
   m_ObjectHideFlags: 0

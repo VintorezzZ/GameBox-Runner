@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
         
         weaponManager = new WeaponManager(gunHolder, rayCastPoint);
         pickUpHandler.Init(this);
-        moveController.Init(this);
+        moveController.Init(this, _animator);
         EventHub.gameStarted += OnGameStarted;
     }
     

@@ -36,7 +36,6 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
         CreateFreePlatform(false);
         CreateObstaclePlatform();
         CreateObstaclePlatform();
-        CreateCrossPlatform();
         for (int i = 0; i < 5; i++)
         {
             CreatePlatform(null);
@@ -45,17 +44,17 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
 
     public void CreatePlatform(PoolItem nothing)
     {
-        if (_isObstacle)
-            CreateFreePlatform();
-        else if(_isCross)
-            CreateObstaclePlatform();
-        else
-        {
-            if (_random.Next(0, 100) <= 50f)
-                CreateCrossPlatform();
-            else
-                CreateObstaclePlatform();
-        }
+    
+           CreateFreePlatform();
+        // else if(_isCross)
+        //     CreateObstaclePlatform();
+        // else
+        // {
+        //     if (_random.Next(0, 100) <= 50f)
+        //         CreateCrossPlatform();
+        //     else
+        //         CreateObstaclePlatform();
+        // }
     }
 
     private PoolItem CreateBasePlatform(PoolType platformType)

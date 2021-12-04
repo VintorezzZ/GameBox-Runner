@@ -96,9 +96,9 @@ public class RoadBlock : MonoBehaviour, IPoolObservable
     {
         Obstacle roadItem;
         
-        if (_random.Next(0, 100) < 10)
-            roadItem = PoolManager.Get(PoolType.Bonuses).GetComponent<Obstacle>();
-        else
+        //if (_random.Next(0, 100) < 10)
+        //    roadItem = PoolManager.Get(PoolType.Bonuses).GetComponent<Obstacle>();
+        //else
             roadItem = PoolManager.GetRandom(PoolType.Obstacles).GetComponent<Obstacle>();
 
         return roadItem;

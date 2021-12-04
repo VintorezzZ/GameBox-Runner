@@ -7,7 +7,7 @@ public class Config
 {
     public int pickUpBonusCoins = 1;
     public int startAmmo = 3;
-    public int startHealth = 3;
+    public int startHealth = 1;
     public float startSpeed = 10f;
     public float strafeSpeed = 6f;
     public float acceleration = 0.1f;

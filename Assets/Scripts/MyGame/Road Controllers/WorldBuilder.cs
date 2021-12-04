@@ -7,9 +7,9 @@ using Random = System.Random;
 public class WorldBuilder : SingletonBehaviour<WorldBuilder>
 {
     private Transform _lastPlatform = null;
+    private PoolType _lastRoadType;
 
     private bool _isObstacle;
-    private bool _isCross;
 
     private Random _random;
     private void OnEnable()
@@ -44,19 +44,18 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
 
     public void CreatePlatform(PoolItem nothing)
     {
-    
-           CreateFreePlatform();
-        // else if(_isCross)
-        //     CreateObstaclePlatform();
-        // else
-        // {
-        //     if (_random.Next(0, 100) <= 50f)
-        //         CreateCrossPlatform();
-        //     else
-        //         CreateObstaclePlatform();
-        // }
+        var chance = _random.Next(0, 100);
+        switch (_lastRoadType)
+        {
+            case PoolType.RoadSmall: CreateObstaclePlatform(chance > 50 ? PoolType.RoadMiddle : _lastRoadType);
+                break;
+            case PoolType.RoadMiddle: CreateObstaclePlatform(chance > 50 ? PoolType.RoadLong : _lastRoadType);
+                break;
+            case PoolType.RoadLong: CreateObstaclePlatform(chance > 50 ? PoolType.RoadSmall : _lastRoadType);
+                break;
+        }
     }
-
+    
     private PoolItem CreateBasePlatform(PoolType platformType)
     {
         Transform endPoint = (_lastPlatform == null) ? transform : _lastPlatform.GetComponent<RoadBlock>().endPoint;
@@ -65,13 +64,14 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
         PoolItem result = PoolManager.Get(platformType);
         
         _lastPlatform = SetSpawnSettings(result, pos, endPoint);
+        _lastRoadType = platformType;
 
         return result;
     }
 
     private void CreateFreePlatform(bool generateCoins = true)
     {
-        var platform = CreateBasePlatform(PoolType.RoadStraight);
+        var platform = CreateBasePlatform(PoolType.RoadSmall);
         
         if(generateCoins)
             platform.GetComponent<RoadBlock>().GenerateCoins(_random.Next());
@@ -79,23 +79,13 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
         _isObstacle = false;
     }
 
-    private void CreateObstaclePlatform()
+    private void CreateObstaclePlatform(PoolType roadType = PoolType.RoadMiddle)
     {
-        CreateBasePlatform(PoolType.RoadStraight);
+        CreateBasePlatform(roadType);
         
         _lastPlatform.GetComponent<RoadBlock>().GenerateObstacles(_random.Next());
         
         _isObstacle = true;
-        _isCross = false;
-    }
-
-    private void CreateCrossPlatform()
-    {
-        var crossRoad = CreateBasePlatform(_random.Next(0, 100) <= 100f ? PoolType.RoadBendLeft : PoolType.RoadBendRight);
-        crossRoad.GetComponent<RoadBlock>().GenerateObstacles(_random.Next());
-        
-        _isCross = true;
-        _isObstacle = false;
     }
 
     private Transform SetSpawnSettings(PoolItem result, Vector3 pos, Transform endPoint)

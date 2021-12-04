@@ -11,7 +11,7 @@ public class PoolContainer : MonoBehaviour  // container
     public bool expandable;
     public List<GameObject> examplePrefabs; // only for set
     public List<PoolItem> pooledItems;
-    
+
     public void Init()
     {
         for (int i = 0; i < amount; i++)

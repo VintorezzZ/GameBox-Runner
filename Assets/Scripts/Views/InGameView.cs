@@ -32,6 +32,11 @@ namespace Views
                 
                 powerUps.Add(item.type, item);
             }
+
+            foreach (var heart in hearts)
+            {
+                heart.gameObject.SetActive(false);
+            }
         }
 
         public override void Show()

@@ -17,7 +17,7 @@ namespace MyGame.Player
 
         private Animator _animator;
         
-        private float laneDistance = 1f;
+        private float laneDistance = 2f;
         [SerializeField] private float targetLane;
         [SerializeField] private float currentLane = 1;
         private float x;
@@ -53,7 +53,7 @@ namespace MyGame.Player
                     _animator.SetTrigger("right");
             }
         
-            if (Input.GetButtonDown("Jump") && _charController.isGrounded)
+            if ((Input.GetButtonDown("Jump") | SwipeManager.swipeUp) && _charController.isGrounded)
             {
                 Jump();
             }

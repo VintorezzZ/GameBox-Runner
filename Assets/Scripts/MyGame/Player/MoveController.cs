@@ -58,36 +58,45 @@ namespace MyGame.Player
         private void ProcessInputs()
         {
             ProcessStrafe();
+            ProcessJump();
+            ProcessSlide();
+        }
+
+        private void ProcessSlide()
+        {
+            if (!Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.DownArrow) && !SwipeManager.swipeDown)
+                return;
+
+            if (_slideTimer.IsStarted && _slideTimer.Time < _slideDuration)
+                return;
+
+            Slide();
+        }
+
+        private void ProcessJump()
+        {
+            if (!Input.GetButtonDown("Jump") 
+                && !Input.GetKeyDown(KeyCode.W) 
+                && !Input.GetKeyDown(KeyCode.UpArrow) 
+                && !SwipeManager.swipeUp) 
+                return;
             
-            if ((Input.GetButtonDown("Jump") | Input.GetKeyDown(KeyCode.W) | Input.GetKeyDown(KeyCode.UpArrow) | SwipeManager.swipeUp))
-            {
-                if(!_charController.isGrounded)
-                    return;
+            if(!_charController.isGrounded)
+                return;
 
-                if (_slideTimer.IsStarted)
-                {
-                    StopCoroutine(_slideRoutine);
-                    _slideTimer.Stop();
-                    _charController.height = _colliderBaseHeight;
-                    _charController.center = _colliderBaseCenter;
-                }
-                
-                Jump();
-            }
-
-            if (Input.GetKeyDown(KeyCode.S) | Input.GetKeyDown(KeyCode.DownArrow) | SwipeManager.swipeDown)
+            if (_slideTimer.IsStarted)
             {
-                if(_slideTimer.IsStarted && _slideTimer.Time < _slideDuration)
-                    return;
-                
-                Slide();
+                StopCoroutine(_slideRoutine);
+                _slideTimer.Stop();
+                _charController.height = _colliderBaseHeight;
+                _charController.center = _colliderBaseCenter;
             }
+                
+            Jump();
         }
 
         private void ProcessStrafe()
         {
-            int horizInput = (int)Input.GetAxisRaw("Horizontal");
-
             if(!Input.GetKeyDown(KeyCode.A) 
                && !Input.GetKeyDown(KeyCode.D) 
                && !Input.GetKeyDown(KeyCode.LeftArrow) 
@@ -95,12 +104,17 @@ namespace MyGame.Player
                && !SwipeManager.swipeLeft && !SwipeManager.swipeRight)
                 return;
 
+            int horizInput = (int)Input.GetAxisRaw("Horizontal");
             int sign = 0;
-            if (Mathf.Abs(horizInput) > 0.1f)
+
+            if (Mathf.Abs(horizInput) > 0)
                 sign = (int)Mathf.Sign(horizInput);
             else
                 sign = SwipeManager.swipeLeft ? -1 : 1;
-            UnityEngine.Debug.LogError(sign);
+     
+            if(!CanStrafe(sign))
+                return;
+            
             ChangeLane(sign);
 
             if (_targetLane > -1 && _targetLane < 3)
@@ -139,6 +153,10 @@ namespace MyGame.Player
             _charController.Move((xMovement + yMovement + zMovement) * Time.deltaTime);
         }
 
+        private bool CanStrafe(int sign)
+        {
+            return !Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.right * sign, 1.5f);
+        }
         void ChangeLane(int direction)
         {
             _targetLane = _currentLane + direction;

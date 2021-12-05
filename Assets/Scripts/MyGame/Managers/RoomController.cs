@@ -26,7 +26,7 @@ public class RoomController : SingletonBehaviour<RoomController>
 
     private void Start()
     {
-        localPlayer = Instantiate(Resources.Load<Player>("Player"), new Vector3(0f, 0f, 10f), Quaternion.identity);
+        localPlayer = Instantiate(Resources.Load<Player>("Player"), new Vector3(0f, .5f, 10f), Quaternion.identity);
         localPlayer.Init();
         localPlayer.transform.SetParent(transform);
         playerCamera.Follow = localPlayer.transform;

@@ -6,7 +6,7 @@ using UnityEngine;
 using Utils;
 using Views;
 
-[RequireComponent(typeof(PickUpHandler), typeof(MoveController))]
+[RequireComponent(typeof(PickUpHandler), typeof(MoveController), typeof(Animator))]
 public class Player : MonoBehaviour
 {
     #region Public Fields
@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
     private int _bullets;
     private int _coins;
     private Transform _generatedBullets;
-    private static readonly int Blend = Animator.StringToHash("Blend");
     private bool _canShoot = true;
 
     #endregion
@@ -115,8 +114,6 @@ public class Player : MonoBehaviour
                 StartCoroutine(Shoot());
             }
         }
-
-        ProcessAnimation(moveController.horizontalInput);
     }
     
     private void UpdateScore()
@@ -136,11 +133,6 @@ public class Player : MonoBehaviour
     {
         _generatedBullets = new GameObject("generatedBullets").transform;
         _generatedBullets.SetParent(FindObjectOfType<WorldBuilder>().transform);
-    }
-    
-    private void ProcessAnimation(float horizontalInput)
-    {
-        _animator.SetFloat(Blend, horizontalInput);
     }
     
     private IEnumerator Shoot()

@@ -417,6 +417,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: Run
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: strafe
     m_Type: 9
     m_DefaultFloat: 0
@@ -425,6 +431,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: Strafe
     m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: strafe mirror
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -501,13 +513,13 @@ AnimatorState:
   m_WriteDefaultValues: 1
   m_Mirror: 0
   m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
+  m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 4358487964219254607}
+  m_Motion: {fileID: -203655887218126122, guid: 26233c3ecdeea4e41a9ab8491229f357, type: 3}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: 
+  m_MirrorParameter: strafe mirror
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1101 &2693785614413354620

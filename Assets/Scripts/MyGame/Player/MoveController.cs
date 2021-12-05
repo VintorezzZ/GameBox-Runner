@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using Utils;
+using Debug = System.Diagnostics.Debug;
 
 namespace MyGame.Player
 {
@@ -21,8 +23,7 @@ namespace MyGame.Player
         public float gravityAmount = -20;
         [SerializeField] private float airSlideGravityForce;
         [SerializeField] private float jumpForce;
-
-        [HideInInspector] public float horizontalInput;
+        
         [SerializeField] private float startSpeed = 10;
         [SerializeField] private float maxSpeed = 20;
         [SerializeField] private float strafeSpeed = 6;
@@ -31,6 +32,7 @@ namespace MyGame.Player
         [SerializeField] private float laneDistance = 2f;
         private float _targetLane;
         private float _currentLane = 1;
+        private int _lastHorizontalInput = 0;
         private float x;
 
         public float Speed { get; private set; }
@@ -55,26 +57,9 @@ namespace MyGame.Player
 
         private void ProcessInputs()
         {
-            if (Input.GetKeyDown(KeyCode.A) | Input.GetKeyDown(KeyCode.LeftArrow) | SwipeManager.swipeLeft)
-            {
-                ChangeLane(-1);
-                if (_targetLane > -1)
-                {
-                    _animator.SetBool("strafe mirror", false);
-                    _animator.SetTrigger("strafe");
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.D) | Input.GetKeyDown(KeyCode.RightArrow) | SwipeManager.swipeRight)
-            {
-                ChangeLane(1);
-                if (_targetLane < 3)
-                {
-                    _animator.SetBool("strafe mirror", true);
-                    _animator.SetTrigger("strafe");
-                }
-            }
-        
-            if ((Input.GetButtonDown("Jump") | Input.GetKeyDown(KeyCode.W) | SwipeManager.swipeUp))
+            ProcessStrafe();
+            
+            if ((Input.GetButtonDown("Jump") | Input.GetKeyDown(KeyCode.W) | Input.GetKeyDown(KeyCode.UpArrow) | SwipeManager.swipeUp))
             {
                 if(!_charController.isGrounded)
                     return;
@@ -98,7 +83,38 @@ namespace MyGame.Player
                 Slide();
             }
         }
-        
+
+        private void ProcessStrafe()
+        {
+            int horizInput = (int)Input.GetAxisRaw("Horizontal");
+
+            if(!Input.GetKeyDown(KeyCode.A) 
+               && !Input.GetKeyDown(KeyCode.D) 
+               && !Input.GetKeyDown(KeyCode.LeftArrow) 
+               && !Input.GetKeyDown(KeyCode.RightArrow) 
+               && !SwipeManager.swipeLeft && !SwipeManager.swipeRight)
+                return;
+
+            int sign = 0;
+            if (Mathf.Abs(horizInput) > 0.1f)
+                sign = (int)Mathf.Sign(horizInput);
+            else
+                sign = SwipeManager.swipeLeft ? -1 : 1;
+            UnityEngine.Debug.LogError(sign);
+            ChangeLane(sign);
+
+            if (_targetLane > -1 && _targetLane < 3)
+            {
+                if(_charController.isGrounded 
+                   && !_animator.IsInTransition(0) 
+                   && _animator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+                {
+                    _animator.SetBool("strafe mirror", sign < 0);
+                    _animator.SetTrigger("strafe");
+                }
+            }
+        }
+
         public void Tick()
         {
             ProcessInputs();

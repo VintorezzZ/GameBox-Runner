@@ -209,22 +209,5 @@ namespace MyGame.Player
             if (Speed > maxSpeed)
                 Speed = maxSpeed;
         }
-        
-        private void CheckForCrossBends(Collider other)
-        {
-            if (other.gameObject.CompareTag("Cross left"))
-            {
-                transform.localRotation *= Quaternion.Euler(0, -90, 0);
-            }
-            else if (other.gameObject.CompareTag("Cross right"))
-            {
-                transform.localRotation *= Quaternion.Euler(0, 90, 0);
-            }
-        }
-        
-        private void OnTriggerEnter(Collider other)
-        {
-            CheckForCrossBends(other);
-        }
     }
 }

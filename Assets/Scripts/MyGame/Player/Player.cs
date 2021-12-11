@@ -170,6 +170,9 @@ public class Player : MonoBehaviour
             return;
         
         CheckForObstacle(other);
+        
+        if (other.gameObject.CompareTag("Lose"))
+            StartDeathRoutine();
     }
 
     private void CheckForObstacle(Collider other)
@@ -179,7 +182,7 @@ public class Player : MonoBehaviour
             SoundManager.Instance.PlayHit();
             if(!god)
                 Health--;
-            ViewManager.GetView<InGameView>().RemoveHealth(Health);
+            ViewManager.GetView<InGameView>().RemoveHealth(Health); //Event OnHit
             if (Health >= 1)
             {
                 PoolManager.Return(other.gameObject.GetComponentInParent<PoolItem>());

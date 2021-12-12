@@ -58,8 +58,10 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     
     private PoolItem CreateBasePlatform(PoolType platformType)
     {
+        float yOffset = _random.Next(0, 2);
+        float zOffset = _random.Next(1, 4);
         Transform endPoint = (_lastPlatform == null) ? transform : _lastPlatform.GetComponent<RoadBlock>().endPoint;
-        Vector3 pos = (_lastPlatform == null) ? transform.position : endPoint.position;
+        Vector3 pos = (_lastPlatform == null) ? transform.position : endPoint.position + new Vector3(0, yOffset, zOffset);
 
         PoolItem result = PoolManager.Get(platformType);
         

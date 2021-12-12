@@ -66,31 +66,31 @@ public class RoadBlock : MonoBehaviour, IPoolObservable
         _generatedGraphics.SetParent(transform);
     }
 
-    public void GenerateObstacles(int next)
-    {
-        _random = new Random(next);
-        
-        if (obstaclePoints.Length > 0)
-        {
-            for (int i = 0; i < obstaclePoints.Length; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    Obstacle roadItem = GetRoadItem();
-
-                    roadItem.onReturnToPool += RemoveObstacleFromList;
-
-                    roadItem.transform.SetParent(_generatedObstacles);
-                    roadItem.transform.position = obstaclePoints[i].position;
-                    roadItem.transform.rotation = obstaclePoints[i].rotation;
-                    
-                    roadItem.gameObject.SetActive(true);
-
-                    pooledObstacles.Add(roadItem);
-                }
-            }
-        }
-    }
+    // public void GenerateObstacles(int next)
+    // {
+    //     _random = new Random(next);
+    //     
+    //     if (obstaclePoints.Length > 0)
+    //     {
+    //         for (int i = 0; i < obstaclePoints.Length; i++)
+    //         {
+    //             if (i % 2 == 0)
+    //             {
+    //                 Obstacle roadItem = GetRoadItem();
+    //
+    //                 roadItem.onReturnToPool += RemoveObstacleFromList;
+    //
+    //                 roadItem.transform.SetParent(_generatedObstacles);
+    //                 roadItem.transform.position = obstaclePoints[i].position;
+    //                 roadItem.transform.rotation = obstaclePoints[i].rotation;
+    //                 
+    //                 roadItem.gameObject.SetActive(true);
+    //
+    //                 pooledObstacles.Add(roadItem);
+    //             }
+    //         }
+    //     }
+    // }
 
     private Obstacle GetRoadItem()
     {

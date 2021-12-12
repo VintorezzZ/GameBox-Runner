@@ -44,14 +44,14 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
 
     public void CreatePlatform(PoolItem nothing)
     {
-        var chance = _random.Next(0, 100);
+        //var chance = _random.Next(0, 100);
         switch (_lastRoadType)
         {
-            case PoolType.RoadSmall: CreateObstaclePlatform(chance > 50 ? PoolType.RoadMiddle : _lastRoadType);
+            case PoolType.RoadSmall: CreateObstaclePlatform(/*chance > 50 ? _lastRoadType : */PoolType.RoadMiddle);
                 break;
-            case PoolType.RoadMiddle: CreateObstaclePlatform(chance > 50 ? PoolType.RoadLong : _lastRoadType);
+            case PoolType.RoadMiddle: CreateObstaclePlatform(/*chance > 50 ? _lastRoadType : */PoolType.RoadLong);
                 break;
-            case PoolType.RoadLong: CreateObstaclePlatform(chance > 50 ? PoolType.RoadSmall : _lastRoadType);
+            case PoolType.RoadLong: CreateObstaclePlatform(/*chance > 50 ? _lastRoadType : */PoolType.RoadSmall);
                 break;
         }
     }
@@ -63,7 +63,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
         Transform endPoint = (_lastPlatform == null) ? transform : _lastPlatform.GetComponent<RoadBlock>().endPoint;
         Vector3 pos = (_lastPlatform == null) ? transform.position : endPoint.position + new Vector3(0, yOffset, zOffset);
 
-        PoolItem result = PoolManager.Get(platformType);
+        PoolItem result = PoolManager.GetRandom(platformType);
         
         _lastPlatform = SetSpawnSettings(result, pos, endPoint);
         _lastRoadType = platformType;
@@ -85,7 +85,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     {
         CreateBasePlatform(roadType);
         
-        _lastPlatform.GetComponent<RoadBlock>().GenerateObstacles(_random.Next());
+        //_lastPlatform.GetComponent<RoadBlock>().GenerateObstacles(_random.Next());
         
         _isObstacle = true;
     }

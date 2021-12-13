@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.13683042, g: 0.14992788, b: 0.16150066, a: 1}
+  m_IndirectSpecularColor: {r: 0.016718458, g: 0.019590106, b: 0.022350969, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -368,6 +368,8 @@ MonoBehaviour:
   expandable: 1
   examplePrefabs:
   - {fileID: 5421442304713297008, guid: 4c352d896ab84114f82de79b96558e16, type: 3}
+  - {fileID: 5421442304713297008, guid: 76f3e27ec5fefb94e8f27d4e4f9907ea, type: 3}
+  - {fileID: 5421442304713297008, guid: b1bb6fc5300ed664fbd32299faee970f, type: 3}
   pooledItems: []
 --- !u!1 &920360790
 GameObject:
@@ -463,6 +465,8 @@ MonoBehaviour:
   expandable: 1
   examplePrefabs:
   - {fileID: 5421442304713297008, guid: 43cefb32a2d3f93469d54bebbcda60fd, type: 3}
+  - {fileID: 5421442304713297008, guid: b4b73857c263f65409b5aeb48dd3904b, type: 3}
+  - {fileID: 5421442304713297008, guid: 5d103593f32fee748a9ad6ceaba52cac, type: 3}
   pooledItems: []
 --- !u!1 &1297579885
 GameObject:
@@ -825,6 +829,8 @@ MonoBehaviour:
   expandable: 1
   examplePrefabs:
   - {fileID: 5421442304713297008, guid: 8f644132b00eaaf4e80f9d6ba67a2a2f, type: 3}
+  - {fileID: 5421442304713297008, guid: 33a98edde5e660b44935d39a06954e0a, type: 3}
+  - {fileID: 5421442304713297008, guid: 58b95847885a75844baa38c9446f2c43, type: 3}
   pooledItems: []
 --- !u!1 &1998025706
 GameObject:

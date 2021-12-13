@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 59f0658f6582f6241b3ddf0d8c42356f
+guid: 1721d14f48dd17b4482794006fb0547a
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ocket_Group43081Mat
+    second: {fileID: 2100000, guid: ce35286499abbb142962a7a6c0c9f950, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCube85_Rocket_bonusesMat
+    second: {fileID: 2100000, guid: 8588159b6b10e9e4aa0c111eb3392695, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: d2f0c150246d3424197abbd4347676f1
+guid: cfd775c5235138945b20f2de154a2745
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pryanic_lp_lp_bonusesMat
+    second: {fileID: 2100000, guid: 8588159b6b10e9e4aa0c111eb3392695, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 51ed2cd73b3057e41a425f8496be6c44
+guid: a87c900a67719b542adf623507af5e41
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: white_n_black_theme
-    second: {fileID: 2100000, guid: 93bad5880cd551a4bb3b88004e5676b2, type: 2}
+      name: pCylinder2_bonusesMat
+    second: {fileID: 2100000, guid: 8588159b6b10e9e4aa0c111eb3392695, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

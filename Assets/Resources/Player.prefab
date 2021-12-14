@@ -7251,7 +7251,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.7
   m_Radius: 0.25
-  m_SlopeLimit: 45
+  m_SlopeLimit: 80
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
@@ -7312,7 +7312,6 @@ MonoBehaviour:
   gravityAmount: -20
   airSlideGravityForce: -25
   jumpForce: 1
-  horizontalInput: 0
   startSpeed: 10
   maxSpeed: 20
   strafeSpeed: 6

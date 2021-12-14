@@ -7,8 +7,8 @@ using Random = System.Random;
 public class RoadBlock : MonoBehaviour, IPoolObservable
 {
     public Transform endPoint;
-    public Transform[] obstaclePoints;
-    public Transform[] coinsPoints;
+    public GameObject obstaclesRoot;
+    public GameObject bonusesRoot;
     public Transform[] graphicsPoints;
     public List<Obstacle> pooledObstacles;
     public List<RoadGraphics> pooledGraphics;
@@ -17,12 +17,15 @@ public class RoadBlock : MonoBehaviour, IPoolObservable
     private RoadEnd[] _destroyers;
     private Transform _generatedObstacles;
     private Transform _generatedGraphics;
+    private List<Obstacle> _obstacles = new List<Obstacle>();
 
     private Random _random;
     private void Awake()
     {
         CreateObstaclesContainer();
         CreateGraphicsContainer();
+        
+        _obstacles.AddRange(obstaclesRoot.GetComponentsInChildren<Obstacle>());
     }
 
     private void Start()
@@ -35,7 +38,7 @@ public class RoadBlock : MonoBehaviour, IPoolObservable
            destroyer.parentPoolItem = _poolItem;
        }
     }
-
+    
     private void GenerateGraphics()
     {
         if (graphicsPoints.Length > 0)
@@ -110,24 +113,12 @@ public class RoadBlock : MonoBehaviour, IPoolObservable
 
         return roadItem;
     }
-
     
     public void OnReturnToPool()
     {
-        ReturnObstaclesToPool();
         ReturnGraphicsToPool();
     }
 
-    public void ReturnObstaclesToPool()
-    {
-        foreach (var obst in pooledObstacles)
-        {
-            obst.onReturnToPool -= RemoveObstacleFromList;
-            obst.RemoveObstacle();
-        }
-
-        pooledObstacles.Clear();
-    }
     public void ReturnGraphicsToPool()
     {
         foreach (var graph in pooledGraphics)
@@ -138,27 +129,25 @@ public class RoadBlock : MonoBehaviour, IPoolObservable
         pooledGraphics.Clear();
     }
 
-    private void RemoveObstacleFromList(Obstacle obst)
-    {
-        obst.onReturnToPool -= RemoveObstacleFromList;
-        pooledObstacles.Remove(obst);
-    }
-
     public void OnTakeFromPool()
     {
         GenerateGraphics();
+
+        InitObstacles();
     }
 
-    public void GenerateCoins(int next)
+    private void InitObstacles()
     {
-        _random = new Random(next);
-        
-        if (coinsPoints.Length > 0)
+        foreach (var obstacle in _obstacles)
         {
-            foreach (var coin in coinsPoints)
-            {
-                coin.gameObject.SetActive(true);
-            }
+            obstacle.Init();
+            obstacle.ActivateCoins();
         }
+    }
+
+    public void HideObjects()
+    {
+        bonusesRoot.SetActive(false);
+        obstaclesRoot.SetActive(false);
     }
 }

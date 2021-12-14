@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c16af06345089154e93b29d456f90282
+guid: 8de40571af8a910408e7408f7ef2836e
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: white_n_black_theme
+      name: lppCube9Mat
     second: {fileID: 2100000, guid: 93bad5880cd551a4bb3b88004e5676b2, type: 2}
   materials:
     materialImportMode: 2

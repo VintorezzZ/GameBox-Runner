@@ -1,34 +1,52 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using MyGame.Other;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Obstacle : MonoBehaviour, IPoolObservable, IDamageable
 {
     public event Action<Obstacle> onReturnToPool;
+    [SerializeField] private CoinsSetup[] coinsSetups;
 
     private PoolItem _poolItem;
-
-    private void Start()
+    
+    public void Init()
     {
-        _poolItem = GetComponent<PoolItem>();
+        foreach (var coinsSetup in coinsSetups)
+        {
+            coinsSetup.Init();
+        }
     }
 
-    public void RemoveObstacle()
+    public void DeActivateCoins()
     {
-        PoolManager.Return(this._poolItem);
+        if(coinsSetups.Length == 0)
+            return;
+        
+        foreach (var setup in coinsSetups)
+        {
+            setup.DeActivate();
+        }
     }
-    public void OnReturnToPool()
+    
+    public void ActivateCoins()
     {
-        onReturnToPool?.Invoke(this);  
+        if(coinsSetups.Length == 0)
+            return;
+        
+        var setup = Random.Range(0, coinsSetups.Length);
+        coinsSetups[setup].Activate();
     }
 
+    
     public void OnTakeFromPool()
     {
         
     }
-
-
+    public void OnReturnToPool()
+    {
+        onReturnToPool?.Invoke(this);
+    }
     public void TakeDamage()
     {
         

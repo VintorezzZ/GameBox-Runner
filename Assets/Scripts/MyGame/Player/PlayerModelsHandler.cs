@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +16,16 @@ public class PlayerModelsHandler : MonoBehaviour
       
       if(PlayerPrefs.HasKey("playermodel"))
       {
-         playerModels[PlayerPrefs.GetInt("playermodel")].gameObject.SetActive(true);
+         try
+         {
+            playerModels[PlayerPrefs.GetInt("playermodel")].gameObject.SetActive(true);
+         }
+         catch (Exception e)
+         {
+            Debug.LogError("No saved model in list. Set default model");
+            playerModels[0].gameObject.SetActive(true);
+         }
+         
          currentModelIndex = PlayerPrefs.GetInt("playermodel");
       }
       else

@@ -255,8 +255,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.745283, g: 0.7391465, b: 0.65669274, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.7783019, g: 0.8813684, b: 1, a: 1}
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -879,7 +879,7 @@ MonoBehaviour:
   amount: 10
   expandable: 1
   examplePrefabs:
-  - {fileID: 5541168986681651681, guid: 668b87f87d6dbff4a839273b06d18746, type: 3}
+  - {fileID: 5541168986681651681, guid: 9affc63ec3cf9d14fb94c142782b7e85, type: 3}
   - {fileID: 1432391964442992918, guid: f75ce6a9f95795545b980c94b790aafa, type: 3}
   - {fileID: 7873555733321789177, guid: 854ca9d77c9a82748a8a9d8a34ff168f, type: 3}
   - {fileID: 1549825400480926154, guid: d32324f5ed6128142adf005e56305ee0, type: 3}
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 3.5, z: -7.75}
+  m_FollowOffset: {x: 0, y: 5, z: -7.75}
   m_XDamping: 1
   m_YDamping: 0.5
   m_ZDamping: 0.5

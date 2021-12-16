@@ -33,7 +33,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     {
         _random = new Random(seed);
         
-        CreateFreePlatform(false);
+        CreateFreePlatform();
         CreateObstaclePlatform();
         CreateObstaclePlatform();
         for (int i = 0; i < 5; i++)
@@ -58,7 +58,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     
     private PoolItem CreateBasePlatform(PoolType platformType)
     {
-        float yOffset = _random.Next(0, 2);
+        float yOffset = _random.Next(-1, 1);
         float zOffset = _random.Next(1, 4);
         Transform endPoint = (_lastPlatform == null) ? transform : _lastPlatform.GetComponent<RoadBlock>().endPoint;
         Vector3 pos = (_lastPlatform == null) ? transform.position : endPoint.position + new Vector3(0, yOffset, zOffset);
@@ -71,12 +71,13 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
         return result;
     }
 
-    private void CreateFreePlatform(bool generateCoins = true)
+    private void CreateFreePlatform()
     {
         var platform = CreateBasePlatform(PoolType.RoadSmall);
-        
-        if(generateCoins)
-            platform.GetComponent<RoadBlock>().GenerateCoins(_random.Next());
+
+        platform.GetComponent<RoadBlock>().HideObjects();
+        // if(generateCoins)
+        //     platform.GetComponent<RoadBlock>().GenerateCoins(_random.Next());
         
         _isObstacle = false;
     }

@@ -1,11 +1,19 @@
 fileFormatVersion: 2
-guid: 5a6b956f491014ea38bd0c052f619da6
+guid: 1a077fd5bd30aef41977ccca0fcbc510
 ModelImporter:
-  serializedVersion: 20101
-  internalIDToNameTable: []
-  externalObjects: {}
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      74: -203655887218126122
+    second: mixamo.com
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: initialShadingGroup
+    second: {fileID: 2100000, guid: ce35286499abbb142962a7a6c0c9f950, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -95,6 +103,7 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

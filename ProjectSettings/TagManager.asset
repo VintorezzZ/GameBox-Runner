@@ -18,6 +18,7 @@ TagManager:
   - RoadBend
   - GunHolder
   - FxTemporaire
+  - Lose
   layers:
   - Default
   - TransparentFX

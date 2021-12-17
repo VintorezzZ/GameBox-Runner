@@ -7,7 +7,12 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lppCube13Mat
+      name: po2LP_roof2_lp2Mat
+    second: {fileID: 2100000, guid: 93bad5880cd551a4bb3b88004e5676b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: textureEditorIsolateSelectSet_po2LP_roof2_lp2Mat
     second: {fileID: 2100000, guid: 93bad5880cd551a4bb3b88004e5676b2, type: 2}
   materials:
     materialImportMode: 2

@@ -35,6 +35,12 @@ namespace MyGame.Player
         private int _lastHorizontalInput = 0;
         private float x;
 
+        private bool _canJump = true;
+        private bool _canSlide = true;
+        public bool isRocketMovement = false;
+        private float _cachedSpeed = 0;
+        private float _rocketTargetHeight = 0;
+
         public float Speed { get; private set; }
 
         private global::Player _player;
@@ -44,6 +50,15 @@ namespace MyGame.Player
             _charController = GetComponent<CharacterController>();
             _colliderBaseHeight = _charController.height;
             _colliderBaseCenter = _charController.center;
+
+            EventHub.bonusRocketPickedUp += OnBonusRocketPickedUp;
+            EventHub.gameOvered += OnGameOvered;
+        }
+
+        private void OnDisable()
+        {
+            EventHub.bonusRocketPickedUp -= OnBonusRocketPickedUp;
+            EventHub.gameOvered -= OnGameOvered;
         }
 
         public void Init(global::Player player, Animator animator)
@@ -67,7 +82,7 @@ namespace MyGame.Player
             if (!Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.DownArrow) && !SwipeManager.swipeDown)
                 return;
 
-            if (_slideTimer.IsStarted && _slideTimer.Time < _slideDuration)
+            if (!_canSlide || _slideTimer.IsStarted && _slideTimer.Time < _slideDuration)
                 return;
 
             Slide();
@@ -81,7 +96,7 @@ namespace MyGame.Player
                 && !SwipeManager.swipeUp) 
                 return;
             
-            if(!_charController.isGrounded)
+            if(!_charController.isGrounded || !_canJump)
                 return;
 
             if (_slideTimer.IsStarted)
@@ -138,16 +153,26 @@ namespace MyGame.Player
     
         private void Move()
         {
-            _gravity += gravityAmount * Time.deltaTime;
+            var yMovement = Vector3.zero;
             
-            if (_charController.isGrounded && _gravity <= -1f)
-                _gravity = -1f;
+            if(!isRocketMovement)
+            {
+                _gravity += gravityAmount * Time.deltaTime;
+
+                if (_charController.isGrounded && _gravity <= -1f)
+                    _gravity = -1f;
+                
+                yMovement = Vector3.up * _gravity;
+            }
+            else
+            {
+                yMovement = Vector3.up * (_rocketTargetHeight - transform.position.y) * 3;
+            }
 
             var targetPos = (_currentLane - 1) * laneDistance;
             x = Mathf.Lerp(x, targetPos, strafeSpeed);
 
             var xMovement = Vector3.right * (x - transform.position.x) * strafeSpeed;
-            var yMovement = Vector3.up * _gravity;
             var zMovement = Vector3.forward * Speed;
             
             _charController.Move((xMovement + yMovement + zMovement) * Time.deltaTime);
@@ -205,9 +230,46 @@ namespace MyGame.Player
         }
         private void SpeedControl()
         {
+            if(isRocketMovement)
+                return;
+            
             Speed += acceleration * Time.deltaTime;
             if (Speed > maxSpeed)
                 Speed = maxSpeed;
         }
+        
+        private void OnBonusRocketPickedUp()
+        {
+            StartCoroutine(RocketMovement());
+            
+        }
+
+        private IEnumerator RocketMovement()
+        {
+            _canJump = false;
+            _canSlide = false;
+            isRocketMovement = true;
+            _cachedSpeed = Speed;
+            Speed *= 3f;
+            _gravity = 0;
+            _rocketTargetHeight = transform.position.y + 5;
+            
+            yield return new WaitForSeconds(5f);
+            
+            _canJump = true;
+            _canSlide = true;
+            isRocketMovement = false;
+            Speed = _cachedSpeed;
+        }
+        
+        private void OnGameOvered()
+        {
+            StopAllCoroutines();
+            _canJump = true;
+            _canSlide = true;
+            isRocketMovement = false;
+            Speed = _cachedSpeed;
+        }
+
     }
 }

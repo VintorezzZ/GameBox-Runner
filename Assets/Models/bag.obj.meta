@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 275b0c9b909be1b45802a59144e6988b
+guid: 9bb83da5452c25643bb4fc0b443f190e
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lp2_group13lppCube74_lp2Mat
-    second: {fileID: 2100000, guid: 93bad5880cd551a4bb3b88004e5676b2, type: 2}
+      name: _bag_lpMat
+    second: {fileID: 2100000, guid: ce35286499abbb142962a7a6c0c9f950, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

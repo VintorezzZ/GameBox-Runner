@@ -40,7 +40,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     {
         RoadEnd.onRoadEnd -= CreatePlatform;
         RoadEnd.onRoadEnd -= ReturnToPool;
-        EventHub.bonusRocketPickedUp += OnBonusRocketPickedUp;
+        EventHub.bonusRocketPickedUp -= OnBonusRocketPickedUp;
     }
 
     private void Awake()

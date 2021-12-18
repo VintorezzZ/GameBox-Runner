@@ -18,7 +18,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     private void OnEnable()
     {
         RoadEnd.onRoadEnd += CreatePlatform;
-        RoadEnd.onRoadEnd += ReturnToPool;
+        RoadEnd.onRoadEnd += OnRoadEnd;
         EventHub.bonusRocketPickedUp += OnBonusRocketPickedUp;
     }
 
@@ -39,7 +39,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     private void OnDestroy()
     {
         RoadEnd.onRoadEnd -= CreatePlatform;
-        RoadEnd.onRoadEnd -= ReturnToPool;
+        RoadEnd.onRoadEnd -= OnRoadEnd;
         EventHub.bonusRocketPickedUp -= OnBonusRocketPickedUp;
 
         _playerIsRocket = false;
@@ -129,8 +129,14 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
         return resultTransform;
     }
 
-    private void ReturnToPool(PoolItem poolItem)
-    { 
+    private void OnRoadEnd(PoolItem poolItem)
+    {
+        StartCoroutine(ReturnToPool(poolItem));
+    }
+
+    private IEnumerator ReturnToPool(PoolItem poolItem)
+    {
+        yield return new WaitForSecondsRealtime(1);
         Debug.LogError("return");
         PoolManager.Return(poolItem);
     }

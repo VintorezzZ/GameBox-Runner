@@ -11,12 +11,7 @@ public class RoadEnd : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player))
         {
-            Invoke(nameof(ActivateOnRoadEndEvent), 1);
+            onRoadEnd?.Invoke(parentPoolItem);
         }
-    }
-
-    private void ActivateOnRoadEndEvent()
-    {
-        onRoadEnd?.Invoke(parentPoolItem);
     }
 }

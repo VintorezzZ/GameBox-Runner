@@ -41,6 +41,9 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
         RoadEnd.onRoadEnd -= CreatePlatform;
         RoadEnd.onRoadEnd -= ReturnToPool;
         EventHub.bonusRocketPickedUp -= OnBonusRocketPickedUp;
+
+        _playerIsRocket = false;
+        StopAllCoroutines();
     }
 
     private void Awake()
@@ -73,6 +76,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
             case PoolType.RoadLong: CreateObstaclePlatform(/*chance > 50 ? _lastRoadType : */PoolType.RoadSmall);
                 break;
         }
+        Debug.LogError("create");
     }
     
     private PoolItem CreateBasePlatform(PoolType platformType)
@@ -127,6 +131,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
 
     private void ReturnToPool(PoolItem poolItem)
     { 
+        Debug.LogError("return");
         PoolManager.Return(poolItem);
     }
 }

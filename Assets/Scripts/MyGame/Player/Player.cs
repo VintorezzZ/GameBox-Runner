@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
         if (!canMove)
             return;
         
-        if (_health <= 0f || transform.position.y < -4)
+        if (_health <= 0f)
             StartDeathRoutine();
         
         weaponManager.Tick();

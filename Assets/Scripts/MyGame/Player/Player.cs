@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using MyGame.Managers;
+using MyGame.Other;
 using MyGame.Player;
 using UnityEngine;
 using Utils;
@@ -111,7 +112,7 @@ public class Player : MonoBehaviour
         {
             if (_canShoot && _bullets > 0)
             {
-                StartCoroutine(Shoot());
+                //StartCoroutine(Shoot());
             }
         }
     }
@@ -166,9 +167,9 @@ public class Player : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(!canMove)
+        if(!canMove || moveController.isRocketMovement)
             return;
-        
+
         CheckForObstacle(other);
         
         if (other.gameObject.CompareTag("Lose"))

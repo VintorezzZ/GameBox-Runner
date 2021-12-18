@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 using Random = System.Random;
 
 public class WorldBuilder : SingletonBehaviour<WorldBuilder>
@@ -11,17 +12,35 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
 
     private bool _isObstacle;
 
+    private bool _playerIsRocket = false;
+
     private Random _random;
     private void OnEnable()
     {
         RoadEnd.onRoadEnd += CreatePlatform;
         RoadEnd.onRoadEnd += ReturnToPool;
+        EventHub.bonusRocketPickedUp += OnBonusRocketPickedUp;
+    }
+
+    private void OnBonusRocketPickedUp()
+    {
+        StartCoroutine(BonusRocketSettings());
+    }
+
+    private IEnumerator BonusRocketSettings()
+    {
+        _playerIsRocket = true;
+
+        yield return new WaitForSeconds(5);
+
+        _playerIsRocket = false;
     }
 
     private void OnDestroy()
     {
         RoadEnd.onRoadEnd -= CreatePlatform;
         RoadEnd.onRoadEnd -= ReturnToPool;
+        EventHub.bonusRocketPickedUp += OnBonusRocketPickedUp;
     }
 
     private void Awake()
@@ -60,6 +79,8 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     {
         float yOffset = _random.Next(-1, 1);
         float zOffset = _random.Next(1, 4);
+        if (_playerIsRocket)
+            zOffset = 0;
         Transform endPoint = (_lastPlatform == null) ? transform : _lastPlatform.GetComponent<RoadBlock>().endPoint;
         Vector3 pos = (_lastPlatform == null) ? transform.position : endPoint.position + new Vector3(0, yOffset, zOffset);
 

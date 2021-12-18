@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolType: 2
-  amount: 5
+  amount: 0
   expandable: 1
   examplePrefabs:
   - {fileID: 5421442304713297008, guid: 4c352d896ab84114f82de79b96558e16, type: 3}
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolType: 1
-  amount: 5
+  amount: 0
   expandable: 1
   examplePrefabs:
   - {fileID: 5421442304713297008, guid: 8f644132b00eaaf4e80f9d6ba67a2a2f, type: 3}

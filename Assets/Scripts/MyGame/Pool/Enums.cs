@@ -11,9 +11,9 @@
     RoadGraphics
 }
 
-public enum RoadType
+public enum BonusType
 {
-    Small,
-    Middle,
-    Long
+    Coin,
+    CoinPack,
+    Rocket
 }

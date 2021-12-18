@@ -1,14 +1,19 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class PlayerModelsHandler : MonoBehaviour
 {
    public List<PlayerModel> playerModels;
    public int currentModelIndex;
-
+   [SerializeField] private PlayerModel rocketModel;
+   
    private void Awake()
    {
+      EventHub.bonusRocketPickedUp += ActivateRocketModel;
+      
       foreach (PlayerModel playerModel in playerModels)
       {
          playerModel.gameObject.SetActive(false);
@@ -33,8 +38,10 @@ public class PlayerModelsHandler : MonoBehaviour
          playerModels[0].gameObject.SetActive(true);
          currentModelIndex = 0;
       }
+      
+      currentModelIndex = 0;
    }
-
+   
    public void ActivateModel(int modelIndex)
    {
       if(currentModelIndex == modelIndex || modelIndex == -1 || modelIndex >= playerModels.Count)
@@ -49,6 +56,27 @@ public class PlayerModelsHandler : MonoBehaviour
    private void DeActivateCurrentModel()
    {
       playerModels[currentModelIndex].gameObject.SetActive(false);
+   }
+
+   public void ActivateRocketModel()
+   {
+      StartCoroutine(ActivateRocket());
+   }
+
+   private IEnumerator ActivateRocket()
+   {
+      DeActivateCurrentModel();
+      rocketModel.gameObject.SetActive(true);
+
+      yield return new WaitForSeconds(5);
+      
+      rocketModel.gameObject.SetActive(false);
+      playerModels[currentModelIndex].gameObject.SetActive(true);
+   }
+
+   private void OnDisable()
+   {
+      EventHub.bonusRocketPickedUp -= ActivateRocketModel;
    }
 }
 

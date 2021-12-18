@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Com.MyCompany.MyGame;
+﻿using System.Collections.Generic;
 using MyGame.Other;
 using UnityEngine;
-using UnityEngine.UI;
-using Random = UnityEngine.Random;
 using Utils;
 using Views;
 
@@ -24,8 +20,11 @@ namespace MyGame.Managers
 
         private void OnTriggerEnter(Collider other)
         {
+            if(_player.moveController.isRocketMovement)
+                return;
+            
             CheckForBulletBonus(other);
-            CheckForCoin(other);
+            CheckForBonus(other);
         }
 
         private void CheckForBulletBonus(Collider other)
@@ -46,17 +45,23 @@ namespace MyGame.Managers
             }
         }
         
-        private void CheckForCoin(Collider other)
+        private void CheckForBonus(Collider other)
         {
-            if (other.TryGetComponent(out Coin coin))
+            if (!other.TryGetComponent(out Bonus bonus))
+                return;
+
+            if(bonus.coinsToAdd != 0)
             {
-                _player.Coins += GameSettings.Config.pickUpBonusCoins;
-            
+                _player.Coins += bonus.coinsToAdd;
                 SoundManager.Instance.PlayCoinPickUp();
-                
-                other.gameObject.SetActive(false);
-                //PoolManager.Return(other.gameObject.GetComponent<PoolItem>());
             }
+
+            if (bonus is Rocket)
+            {
+                EventHub.OnBonusRocketPickUp();
+            }
+                
+            other.gameObject.SetActive(false);
         }
     }
 }

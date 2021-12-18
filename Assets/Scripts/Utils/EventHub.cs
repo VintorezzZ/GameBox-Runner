@@ -12,6 +12,7 @@ namespace Utils
         public static event Action<int> bulletsChanged;
         public static event Action<int> coinsChanged;
         public static event Action audioSettingsChanged;
+        public static event Action bonusRocketPickedUp;
 
         public static void OnGameOvered()
         {
@@ -51,6 +52,11 @@ namespace Utils
         public static void OnCoinsChanged(int coins)
         {
             coinsChanged?.Invoke(coins);
+        }
+
+        public static void OnBonusRocketPickUp()
+        {
+            bonusRocketPickedUp?.Invoke();
         }
     }
 }

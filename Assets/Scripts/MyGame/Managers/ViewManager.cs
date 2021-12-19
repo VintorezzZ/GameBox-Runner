@@ -11,8 +11,8 @@ namespace MyGame.Managers
         [SerializeField] private View startingView;
         private View _currentView;
         private readonly Stack<View> _history = new Stack<View>();
-
-        private void Awake()
+        
+        private void Start()
         {
             InitializeSingleton();
             
@@ -21,10 +21,7 @@ namespace MyGame.Managers
                 view.Initialize();  
                 view.Hide();
             }
-        }
-
-        private void Start()
-        {
+            
             if(startingView)
                 Show(startingView, true);
         }

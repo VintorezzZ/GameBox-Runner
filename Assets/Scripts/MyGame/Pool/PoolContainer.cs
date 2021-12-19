@@ -38,6 +38,9 @@ public class PoolContainer : MonoBehaviour  // container
 
     public PoolItem TakeFromPool()
     {
+        if (examplePrefabs.Count == 0)
+            return null;
+        
         for (int i = 0; i < pooledItems.Count; i++)
         {
             if(pooledItems[i].isFree)  //проверять не по иерархии, а по флагу в скрипте
@@ -57,6 +60,9 @@ public class PoolContainer : MonoBehaviour  // container
 
     public PoolItem TakeRandomFromPool()
     {
+        if (examplePrefabs.Count == 0)
+            return null;
+        
         var freeItems = new List<PoolItem>();
         for (int i = 0; i < pooledItems.Count; i++)
         {

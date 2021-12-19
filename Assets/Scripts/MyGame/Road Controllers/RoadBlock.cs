@@ -47,6 +47,9 @@ public class RoadBlock : MonoBehaviour, IPoolObservable
             {
                 RoadGraphics roadGraphics = GetRoadGraphics();
                 
+                if(roadGraphics == null)
+                    continue;
+                
                 roadGraphics.transform.SetParent(_generatedGraphics);
                 roadGraphics.transform.position = graphicsPoints[i].position;
                 roadGraphics.transform.rotation = graphicsPoints[i].rotation;
@@ -109,7 +112,11 @@ public class RoadBlock : MonoBehaviour, IPoolObservable
     
     private RoadGraphics GetRoadGraphics()
     {
-        RoadGraphics roadItem = PoolManager.GetRandom(PoolType.RoadGraphics).GetComponent<RoadGraphics>();
+        PoolItem pooledItem = PoolManager.GetRandom(PoolType.RoadGraphics);
+        RoadGraphics roadItem = null;
+        
+        if(pooledItem)
+            roadItem = pooledItem.GetComponent<RoadGraphics>();
 
         return roadItem;
     }

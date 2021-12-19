@@ -218,14 +218,7 @@ MonoBehaviour:
   poolType: 8
   amount: 5
   expandable: 1
-  examplePrefabs:
-  - {fileID: 4263216370747259034, guid: 87d5386fe96996846a58505de4e7031b, type: 3}
-  - {fileID: 5001896668877902344, guid: b48aca8043a3dbe40a5135070b284814, type: 3}
-  - {fileID: 3822194987301862009, guid: 0b473900353b127419a19eec118e0670, type: 3}
-  - {fileID: 1539293690171384590, guid: dd3c8079a9f43aa48b674f5335bf20ba, type: 3}
-  - {fileID: 2337952262606225752, guid: 03a4af5d20c2ff6449bedb3921f20e9c, type: 3}
-  - {fileID: 5602526646975429580, guid: 85f23b009f2880c4fa935deb1c12650e, type: 3}
-  - {fileID: 4322856661231684229, guid: bc61ff5ac77eb5a488ce3ab9e6a4c6a9, type: 3}
+  examplePrefabs: []
   pooledItems: []
 --- !u!1 &705507993
 GameObject:
@@ -364,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolType: 2
-  amount: 0
+  amount: 5
   expandable: 1
   examplePrefabs:
   - {fileID: 5421442304713297008, guid: 4c352d896ab84114f82de79b96558e16, type: 3}
@@ -829,7 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolType: 1
-  amount: 0
+  amount: 5
   expandable: 1
   examplePrefabs:
   - {fileID: 5421442304713297008, guid: 8f644132b00eaaf4e80f9d6ba67a2a2f, type: 3}

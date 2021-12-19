@@ -35,10 +35,11 @@ namespace Views
             base.Show();
             playerNameInput.text = "Player " + Random.Range(1000, 10000);
 
-            if(PlayerPrefs.HasKey("playername"))
-            {
-                LoadMainMenu();
-            }
+            LoadMainMenu();
+            // if(PlayerPrefs.HasKey("playername"))
+            // {
+            //     
+            // }
         }
     }
 }

@@ -7316,7 +7316,8 @@ MonoBehaviour:
   maxSpeed: 20
   strafeSpeed: 6
   acceleration: 0.1
-  laneDistance: 2
+  laneDistance: 1.8
+  isRocketMovement: 0
 --- !u!114 &-2904332653228642779
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,33 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Obstacle
-  - AwesomeTrigger
-  - Ground
-  - GameManager
-  - Music
-  - UI_manager
-  - Bullet
-  - Cross left
-  - Cross right
-  - Cross
-  - RoadStraight
-  - RoadBend
-  - GunHolder
-  - FxTemporaire
-  - Lose
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Post Process
+  - 
   - Water
   - UI
-  - Obstacle
-  - Bullet
-  - Player
-  - Environment
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

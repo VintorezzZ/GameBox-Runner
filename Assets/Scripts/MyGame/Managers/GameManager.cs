@@ -1,12 +1,11 @@
-﻿using MyGame.Managers;
+﻿using System;
+using MyGame.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utils;
 using Views;
 
-namespace Com.MyCompany.MyGame
-{
-    public class GameManager : SingletonBehaviour<GameManager>
+public class GameManager : SingletonBehaviour<GameManager>
     {
         private void Awake()
         {
@@ -30,7 +29,6 @@ namespace Com.MyCompany.MyGame
                 }
             };
         }
-
         private void InitGameScene(Scene scene)
         {
             SceneManager.SetActiveScene(scene);
@@ -72,6 +70,7 @@ namespace Com.MyCompany.MyGame
         public void LoadGameScene()
         {
             SceneManager.LoadScene("Gameplay", LoadSceneMode.Additive);
+            ViewManager.Instance.uiCamera.gameObject.SetActive(false);
         }
     }
-}
+

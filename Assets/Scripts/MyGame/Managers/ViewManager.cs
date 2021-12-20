@@ -1,21 +1,24 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Views;
 
 namespace MyGame.Managers
 {
     public class ViewManager : SingletonBehaviour<ViewManager>
     {
+        public Camera uiCamera;
         [SerializeField] private View[] views;
         [SerializeField] private View startingView;
         private View _currentView;
         private readonly Stack<View> _history = new Stack<View>();
-        
-        private void Start()
+
+        private void Awake()
         {
             InitializeSingleton();
-            
+        }
+
+        public void Start()
+        {
             foreach (var view in views)
             {
                 view.Initialize();  

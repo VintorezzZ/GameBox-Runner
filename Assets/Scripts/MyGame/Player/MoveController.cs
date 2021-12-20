@@ -153,6 +153,11 @@ namespace MyGame.Player
     
         private void Move()
         {
+            if(_charController.isGrounded)
+                _animator.SetBool("isFlying", false);
+            else if (_gravity <= -10f)
+                _animator.SetBool("isFlying", true);
+            
             var yMovement = Vector3.zero;
             
             if(!isRocketMovement)
@@ -161,7 +166,7 @@ namespace MyGame.Player
 
                 if (_charController.isGrounded && _gravity <= -1f)
                     _gravity = -1f;
-                
+
                 yMovement = Vector3.up * _gravity;
             }
             else
@@ -196,6 +201,7 @@ namespace MyGame.Player
         {
             _gravity += Mathf.Sqrt(jumpForce * -3.0f * gravityAmount);
             _animator.SetTrigger("jump");
+            _animator.SetBool("isFlying", true);
         }
     
         private void Slide()
@@ -254,12 +260,17 @@ namespace MyGame.Player
             _gravity = 0;
             _rocketTargetHeight = transform.position.y + 5;
             
+            _animator.ResetTrigger("jump");
+            _animator.ResetTrigger("slide");
+            _animator.ResetTrigger("strafe");
+            
             yield return new WaitForSeconds(5f);
             
             _canJump = true;
             _canSlide = true;
             isRocketMovement = false;
             Speed = _cachedSpeed;
+            _animator.SetBool("isFlying", true);
         }
         
         private void OnGameOvered()

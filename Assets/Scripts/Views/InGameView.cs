@@ -22,6 +22,8 @@ namespace Views
 
         public override void Initialize()
         {
+            base.Initialize();
+            
             EventHub.bulletsChanged += UpdateBullets;
             EventHub.coinsChanged += UpdateCoins;
 
@@ -32,11 +34,11 @@ namespace Views
                 
                 powerUps.Add(item.type, item);
             }
-
-            foreach (var heart in hearts)
-            {
-                heart.gameObject.SetActive(false);
-            }
+            //
+            // foreach (var heart in hearts)
+            // {
+            //     heart.gameObject.SetActive(false);
+            // }
         }
 
         public override void Show()
@@ -72,17 +74,17 @@ namespace Views
 
         public void AddHealth(int hp)
         {
-            hearts[hp].gameObject.SetActive(true);
+            //hearts[hp].gameObject.SetActive(true);
         }
         
         public void RemoveHealth(int hp)
         {
-            hearts[hp].gameObject.SetActive(false);
+            //hearts[hp].gameObject.SetActive(false);
         }
 
         private void UpdateBullets(int bullets)
         {
-            bulletsText.text = bullets + "/30"; 
+            //bulletsText.text = bullets + "/30"; 
         }
 
         private void UpdateCoins(int coins)

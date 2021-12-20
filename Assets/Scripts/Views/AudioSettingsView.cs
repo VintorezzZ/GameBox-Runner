@@ -15,6 +15,8 @@ public class AudioSettingsView : View
 
     public override void Initialize()
     {
+        base.Initialize();
+        
         backButton.onClick.AddListener(() =>
         {
             AudioSettings.Save();

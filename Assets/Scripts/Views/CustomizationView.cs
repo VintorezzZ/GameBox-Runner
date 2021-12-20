@@ -17,12 +17,14 @@ public class CustomizationView : View
 
     public override void Initialize()
     {
-          leftArrow.onClick.AddListener(SelectPreviousPlayerModel);
-          rightArrow.onClick.AddListener(SelectNextPlayerModel);
-          closeButton.onClick.AddListener(() =>
-          {
-              ViewManager.Show<MainMenuView>();
-          });
+        base.Initialize();
+        
+        leftArrow.onClick.AddListener(SelectPreviousPlayerModel);
+        rightArrow.onClick.AddListener(SelectNextPlayerModel);
+        closeButton.onClick.AddListener(() =>
+        { 
+            ViewManager.Show<MainMenuView>();
+        });
     }
 
     public override void Show()

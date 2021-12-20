@@ -14,6 +14,8 @@ public class MainMenuView : View
         
     public override void Initialize()
     {
+        base.Initialize();
+        
         exitButton.onClick.AddListener(() => GameManager.Instance.QuitGame());
         audioSettingsButton.onClick.AddListener(() =>
         {

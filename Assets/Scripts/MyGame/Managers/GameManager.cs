@@ -13,6 +13,8 @@ using Views;
         public PostProcessVolume postProcessVolume;
         private void Awake()
         {
+            Application.targetFrameRate = 60;
+                
             InitializeSingleton();
             
             EventHub.gameOvered += OnGameOver;

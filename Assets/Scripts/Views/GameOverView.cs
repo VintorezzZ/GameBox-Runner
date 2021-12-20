@@ -14,6 +14,8 @@ namespace Views
         
         public override void Initialize()
         {
+            base.Initialize();
+            
             restartButton.onClick.AddListener(() =>
             {
                 ViewManager.Show<MainMenuView>();

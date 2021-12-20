@@ -11,6 +11,8 @@ public class LoginView : View
         
     public override void Initialize()
     {
+        base.Initialize();
+        
         exitButton.onClick.AddListener(() => GameManager.Instance.QuitGame());
         loginButton.onClick.AddListener(() =>
         {

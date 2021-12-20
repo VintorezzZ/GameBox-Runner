@@ -14,6 +14,8 @@ public class SettingsView : View
         
     public override void Initialize()
     {
+        base.Initialize();
+        
         backButton.onClick.AddListener(() =>
         {
             ViewManager.ShowLast();

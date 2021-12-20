@@ -10,6 +10,8 @@ namespace Views
         [SerializeField] private Button resumeButton;
         public override void Initialize()
         {
+            base.Initialize();
+            
             exitButton.onClick.AddListener(() => GameManager.Instance.QuitGame());
             resumeButton.onClick.AddListener(() =>
             {

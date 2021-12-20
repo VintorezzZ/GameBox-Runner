@@ -58,10 +58,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
         CreateFreePlatform();
         CreateObstaclePlatform();
         CreateObstaclePlatform();
-        for (int i = 0; i < 5; i++)
-        {
-            CreatePlatform(null);
-        }
+        CreatePlatform(null);
     }
 
     public void CreatePlatform(PoolItem nothing)

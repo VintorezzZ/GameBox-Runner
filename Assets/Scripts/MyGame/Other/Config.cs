@@ -26,13 +26,13 @@ public static class GameSettings
 
     public static void GetSettingsFromFile()
     {
-        if (!File.Exists(Path))
-        {
-            CreateDefaultSettings();
-            return;
-        }
-
-        string json = File.ReadAllText(Path);
-        Config = JsonUtility.FromJson<Config>(json);
+        // if (!File.Exists(Path))
+        // {
+        //     CreateDefaultSettings();
+        //     return;
+        // }
+        //
+        // string json = File.ReadAllText(Path);
+        // Config = JsonUtility.FromJson<Config>(json);
     }
 }

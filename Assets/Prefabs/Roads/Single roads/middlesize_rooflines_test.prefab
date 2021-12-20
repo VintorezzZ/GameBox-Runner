@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!4 &5284643458118586398
 Transform:
@@ -48,7 +48,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!4 &1795508027377080562
 Transform:
@@ -172,7 +172,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 119
   m_IsActive: 0
 --- !u!4 &622413109546838637
 Transform:
@@ -266,7 +266,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!4 &6941476001442430410
 Transform:
@@ -302,7 +302,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 22
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!4 &3802169941132615166
 Transform:
@@ -358,7 +358,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 22
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!4 &4783346813130851006
 Transform:
@@ -385,6 +385,10 @@ PrefabInstance:
     - target: {fileID: 198048, guid: cad78765caccb034584e2d71888df418, type: 3}
       propertyPath: m_Name
       value: Building_Apartment_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 198048, guid: cad78765caccb034584e2d71888df418, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 408844, guid: cad78765caccb034584e2d71888df418, type: 3}
       propertyPath: m_RootOrder
@@ -455,6 +459,10 @@ PrefabInstance:
     - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
@@ -530,6 +538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_07 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1117559076405174, guid: 276c6d054db83d64bb3bc6dca0e9103e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 4121792766140796, guid: 276c6d054db83d64bb3bc6dca0e9103e, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -599,6 +611,10 @@ PrefabInstance:
     - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
@@ -674,6 +690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -744,9 +764,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1795508027377080562}
     m_Modifications:
+    - target: {fileID: 1092326577667866, guid: 84bb406b82cecb24cb1ffe5d4359339d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 1421433746022104, guid: 84bb406b82cecb24cb1ffe5d4359339d, type: 3}
       propertyPath: m_Name
       value: Building_M_prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421433746022104, guid: 84bb406b82cecb24cb1ffe5d4359339d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4499070825876286, guid: 84bb406b82cecb24cb1ffe5d4359339d, type: 3}
       propertyPath: m_RootOrder
@@ -817,6 +845,10 @@ PrefabInstance:
     - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_Name
       value: Christmas_Lights_Small_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
@@ -892,6 +924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Apartment_13 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 103238, guid: 010ab566711b9084fad5f5ed2c31d831, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 481966, guid: 010ab566711b9084fad5f5ed2c31d831, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -961,6 +997,10 @@ PrefabInstance:
     - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
@@ -1036,6 +1076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_09
       objectReference: {fileID: 0}
+    - target: {fileID: 1740320999728834, guid: bd35152c2eba6c64dba276f6f831a6ca, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 4668549247772922, guid: bd35152c2eba6c64dba276f6f831a6ca, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -1109,6 +1153,10 @@ PrefabInstance:
     - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
@@ -1184,6 +1232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snowman_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1204464541176138, guid: c635028d443b96844aac3334e1545046, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 4318374556377222, guid: c635028d443b96844aac3334e1545046, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -1257,6 +1309,10 @@ PrefabInstance:
     - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
@@ -1332,6 +1388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Apartment_13
       objectReference: {fileID: 0}
+    - target: {fileID: 103238, guid: 010ab566711b9084fad5f5ed2c31d831, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 481966, guid: 010ab566711b9084fad5f5ed2c31d831, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1401,6 +1461,10 @@ PrefabInstance:
     - target: {fileID: 1117559076405174, guid: 276c6d054db83d64bb3bc6dca0e9103e, type: 3}
       propertyPath: m_Name
       value: Tree_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117559076405174, guid: 276c6d054db83d64bb3bc6dca0e9103e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4121792766140796, guid: 276c6d054db83d64bb3bc6dca0e9103e, type: 3}
       propertyPath: m_RootOrder
@@ -1472,6 +1536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1542,9 +1610,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1795508027377080562}
     m_Modifications:
+    - target: {fileID: 1059702496391702, guid: bbad862e7e06efe4a8ad0346a53e3cde, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 1681277682126416, guid: bbad862e7e06efe4a8ad0346a53e3cde, type: 3}
       propertyPath: m_Name
       value: Building_N_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681277682126416, guid: bbad862e7e06efe4a8ad0346a53e3cde, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4828993989590112, guid: bbad862e7e06efe4a8ad0346a53e3cde, type: 3}
       propertyPath: m_RootOrder
@@ -1660,6 +1736,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiddleSize_roof
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8de40571af8a910408e7408f7ef2836e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147096541892570536, guid: 8de40571af8a910408e7408f7ef2836e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de40571af8a910408e7408f7ef2836e, type: 3}
 --- !u!1 &7752827188549628398 stripped
@@ -1696,6 +1780,10 @@ PrefabInstance:
     - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
@@ -1771,6 +1859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Apartment_10 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 198048, guid: cad78765caccb034584e2d71888df418, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 408844, guid: cad78765caccb034584e2d71888df418, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1840,6 +1932,10 @@ PrefabInstance:
     - target: {fileID: 1097202465213430, guid: 1d6b5fef68a0597429d484a684542eda, type: 3}
       propertyPath: m_Name
       value: Snowman_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097202465213430, guid: 1d6b5fef68a0597429d484a684542eda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4502871394232962, guid: 1d6b5fef68a0597429d484a684542eda, type: 3}
       propertyPath: m_RootOrder
@@ -1915,6 +2011,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1988,6 +2088,10 @@ PrefabInstance:
     - target: {fileID: 1740320999728834, guid: bd35152c2eba6c64dba276f6f831a6ca, type: 3}
       propertyPath: m_Name
       value: Tree_09 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740320999728834, guid: bd35152c2eba6c64dba276f6f831a6ca, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4668549247772922, guid: bd35152c2eba6c64dba276f6f831a6ca, type: 3}
       propertyPath: m_RootOrder
@@ -2063,6 +2167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2136,6 +2244,10 @@ PrefabInstance:
     - target: {fileID: 1704668680122064, guid: 323b963818ad0144d81f946fae064d40, type: 3}
       propertyPath: m_Name
       value: Tree_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704668680122064, guid: 323b963818ad0144d81f946fae064d40, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4381408111451284, guid: 323b963818ad0144d81f946fae064d40, type: 3}
       propertyPath: m_RootOrder
@@ -2211,6 +2323,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_A1_prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1212380520111254, guid: 562df8355904213468a690c4ce6740b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945057450944616, guid: 562df8355904213468a690c4ce6740b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 4541227407256296, guid: 562df8355904213468a690c4ce6740b6, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2277,9 +2397,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1795508027377080562}
     m_Modifications:
+    - target: {fileID: 1092326577667866, guid: 84bb406b82cecb24cb1ffe5d4359339d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 1421433746022104, guid: 84bb406b82cecb24cb1ffe5d4359339d, type: 3}
       propertyPath: m_Name
       value: Building_M_prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421433746022104, guid: 84bb406b82cecb24cb1ffe5d4359339d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4499070825876286, guid: 84bb406b82cecb24cb1ffe5d4359339d, type: 3}
       propertyPath: m_RootOrder
@@ -2350,6 +2478,10 @@ PrefabInstance:
     - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_Name
       value: Christmas_Lights_Small_01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494645229313408, guid: 976222b777200be49bb0642af61f5214, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4281098096818098, guid: 976222b777200be49bb0642af61f5214, type: 3}
       propertyPath: m_RootOrder

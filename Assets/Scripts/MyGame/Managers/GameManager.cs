@@ -1,13 +1,16 @@
-﻿using MyGame.Managers;
+﻿using System;
+using Cinemachine;
+using MyGame.Managers;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 using Utils;
 using Views;
 
-namespace Com.MyCompany.MyGame
-{
     public class GameManager : SingletonBehaviour<GameManager>
     {
+        public CinemachineVirtualCamera playerCamera;
+        public PostProcessVolume postProcessVolume;
         private void Awake()
         {
             InitializeSingleton();
@@ -30,7 +33,6 @@ namespace Com.MyCompany.MyGame
                 }
             };
         }
-
         private void InitGameScene(Scene scene)
         {
             SceneManager.SetActiveScene(scene);
@@ -74,4 +76,4 @@ namespace Com.MyCompany.MyGame
             SceneManager.LoadScene("Gameplay", LoadSceneMode.Additive);
         }
     }
-}
+

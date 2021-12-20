@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Views;
 
 namespace MyGame.Managers
 {
@@ -15,16 +14,16 @@ namespace MyGame.Managers
         private void Awake()
         {
             InitializeSingleton();
-            
+        }
+
+        public void Start()
+        {
             foreach (var view in views)
             {
                 view.Initialize();  
                 view.Hide();
             }
-        }
-
-        private void Start()
-        {
+            
             if(startingView)
                 Show(startingView, true);
         }

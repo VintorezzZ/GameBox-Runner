@@ -7,6 +7,8 @@ public class SettingsView : View
 {
     [SerializeField] private Button backButton;
     [SerializeField] private Button enterButton;
+    [SerializeField] private Toggle postProcessingToggle;
+    
     
     public InputField playerNameInput;
         
@@ -14,13 +16,15 @@ public class SettingsView : View
     {
         backButton.onClick.AddListener(() =>
         {
-            // Hide();
-            // ViewManager.Show<MainView>();
             ViewManager.ShowLast();
         });
         enterButton.onClick.AddListener(() =>
         {
             PlayerPrefs.SetString("playername", playerNameInput.text);
+        });
+        postProcessingToggle.onValueChanged.AddListener((value) =>
+        {
+            GameManager.Instance.postProcessVolume.enabled = value;
         });
     }
 

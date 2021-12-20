@@ -76,7 +76,9 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
             case PoolType.RoadLong: CreateObstaclePlatform(/*chance > 50 ? _lastRoadType : */PoolType.RoadSmall);
                 break;
         }
+#if UNITY_EDITOR
         Debug.LogError("create");
+#endif
     }
     
     private PoolItem CreateBasePlatform(PoolType platformType)
@@ -137,7 +139,9 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     private IEnumerator ReturnToPool(PoolItem poolItem)
     {
         yield return new WaitForSecondsRealtime(1);
+#if UNITY_EDITOR
         Debug.LogError("return");
+#endif
         PoolManager.Return(poolItem);
     }
 }

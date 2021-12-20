@@ -6,7 +6,6 @@ namespace MyGame.Managers
 {
     public class ViewManager : SingletonBehaviour<ViewManager>
     {
-        public Camera uiCamera;
         [SerializeField] private View[] views;
         [SerializeField] private View startingView;
         private View _currentView;

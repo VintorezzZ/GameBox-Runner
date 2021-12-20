@@ -1,12 +1,16 @@
 ﻿using System;
+using Cinemachine;
 using MyGame.Managers;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 using Utils;
 using Views;
 
-public class GameManager : SingletonBehaviour<GameManager>
+    public class GameManager : SingletonBehaviour<GameManager>
     {
+        public CinemachineVirtualCamera playerCamera;
+        public PostProcessVolume postProcessVolume;
         private void Awake()
         {
             InitializeSingleton();
@@ -70,7 +74,6 @@ public class GameManager : SingletonBehaviour<GameManager>
         public void LoadGameScene()
         {
             SceneManager.LoadScene("Gameplay", LoadSceneMode.Additive);
-            ViewManager.Instance.uiCamera.gameObject.SetActive(false);
         }
     }
 

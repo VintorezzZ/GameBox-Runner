@@ -14,7 +14,7 @@ public class RoomController : SingletonBehaviour<RoomController>
     private Text _timerText;
     
     [HideInInspector] public Player localPlayer;
-    [SerializeField] private CinemachineVirtualCamera playerCamera;
+    private CinemachineVirtualCamera _playerCamera;
 
     public Timer startTimer = new Timer();
     public bool isGameStarted = false;
@@ -29,8 +29,8 @@ public class RoomController : SingletonBehaviour<RoomController>
         localPlayer = Instantiate(Resources.Load<Player>("Player"), new Vector3(0f, .5f, 10f), Quaternion.identity);
         localPlayer.Init();
         localPlayer.transform.SetParent(transform);
-        playerCamera.Follow = localPlayer.transform;
-        playerCamera.LookAt = localPlayer.transform;
+        GameManager.Instance.playerCamera.Follow = localPlayer.transform;
+        GameManager.Instance.playerCamera.LookAt = localPlayer.transform;
         _timerText = ViewManager.GetView<InGameView>().timerText;
     }
 

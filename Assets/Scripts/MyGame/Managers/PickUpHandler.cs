@@ -58,7 +58,19 @@ namespace MyGame.Managers
 
             if (bonus is Rocket)
             {
+                var item = PoolManager.Get(PoolType.RocketPickUpFX);
+                item.transform.position = _player.transform.position;
+                item.transform.SetParent(_player.transform);
+                item.gameObject.SetActive(true);
+                
                 EventHub.OnBonusRocketPickUp();
+            }
+
+            if (bonus is Coin)
+            {
+                var item = PoolManager.Get(PoolType.CoinPickUpFX);
+                item.transform.position = bonus.transform.position;
+                item.gameObject.SetActive(true);
             }
                 
             other.gameObject.SetActive(false);

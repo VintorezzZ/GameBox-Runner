@@ -8,7 +8,9 @@
     Rockets,
     Decals,
     ExplosionsFX, 
-    RoadGraphics
+    RoadGraphics,
+    CoinPickUpFX,
+    RocketPickUpFX
 }
 
 public enum BonusType

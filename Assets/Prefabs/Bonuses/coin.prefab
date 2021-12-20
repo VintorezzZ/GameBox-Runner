@@ -141,3 +141,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 1
+  enableRotation: 1
+  rotationSpeed: 0

@@ -1,6 +1,7 @@
 using MyGame.Managers;
 using UnityEngine;
 using UnityEngine.UI;
+using Views;
 
 public class LoginView : View
 {
@@ -25,7 +26,7 @@ public class LoginView : View
 
     private void LoadMainMenu()
     {
-        ViewManager.Show<MainMenuView>();
+        ViewManager.Show<LoadingScreenView>();
         GameManager.Instance.LoadGameScene();
     }
 
@@ -33,11 +34,10 @@ public class LoginView : View
     {
         base.Show();
         playerNameInput.text = "Player " + Random.Range(1000, 10000);
-
-        //LoadMainMenu();
-        // if(PlayerPrefs.HasKey("playername"))
-        // {
-        //     
-        // }
+        
+        if(PlayerPrefs.HasKey("playername"))
+        {
+            LoadMainMenu();
+        }
     }
 }

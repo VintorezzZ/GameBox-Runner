@@ -8,6 +8,7 @@ TagManager:
   - Music
   - Lose
   - Obstacle
+  - Trick trigger
   layers:
   - Default
   - TransparentFX

@@ -37,6 +37,7 @@ using Views;
         }
         private void InitGameScene(Scene scene)
         {
+            ViewManager.Show<MainMenuView>();
             SceneManager.SetActiveScene(scene);
             WorldBuilder.Instance.Init(0);
         }
@@ -58,6 +59,7 @@ using Views;
 
         public void RestartGame()
         {
+            ViewManager.Show<LoadingScreenView>();
             SoundManager.Instance.PreRestartGame();
             SceneManager.UnloadSceneAsync("Gameplay");
         }

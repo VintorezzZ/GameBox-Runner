@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     public float score;
     public MoveController moveController;
     public WeaponManager weaponManager;
-
+    public bool canMakeTrick = false;
+    
     #endregion
 
     #region Private Variables
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
     private int _coins;
     private Transform _generatedBullets;
     private bool _canShoot = true;
-
+   
     #endregion
 
     private int Health
@@ -174,6 +175,11 @@ public class Player : MonoBehaviour
         
         if (other.gameObject.CompareTag("Lose"))
             StartDeathRoutine();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        canMakeTrick = other.CompareTag("Trick trigger");
     }
 
     private void CheckForObstacle(Collider other)

@@ -202,8 +202,15 @@ namespace MyGame.Player
         private void Jump()
         {
             _gravity += Mathf.Sqrt(jumpForce * -3.0f * gravityAmount);
-            _animator.SetTrigger("jump");
-            _animator.SetBool("isFlying", true);
+            if (false/*_player.canMakeTrick && _canJump*/)
+            {
+                _animator.SetInteger("trick", Random.Range(1, 4));
+            }            
+            else
+            {
+                _animator.SetTrigger("jump");
+                _animator.SetBool("isFlying", true);
+            }
         }
     
         private void Slide()

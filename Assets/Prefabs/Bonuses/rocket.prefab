@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2252416547361695348}
   m_LocalRotation: {x: -0, y: -0.994077, z: -0, w: -0.10867836}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3833625059270669658}
   m_Father: {fileID: 0}
@@ -201,6 +201,10 @@ PrefabInstance:
     - target: {fileID: 6369156604716272990, guid: e2b43abed9352da47895c77c9e38a649, type: 3}
       propertyPath: m_Name
       value: Bonus flare
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936808625746761562, guid: e2b43abed9352da47895c77c9e38a649, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2b43abed9352da47895c77c9e38a649, type: 3}

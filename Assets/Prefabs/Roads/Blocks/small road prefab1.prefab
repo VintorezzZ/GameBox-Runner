@@ -444,6 +444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0
 --- !u!1001 &663482339192964752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7354287574687609923, guid: 854ca9d77c9a82748a8a9d8a34ff168f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.66
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 7354287574687609923, guid: 854ca9d77c9a82748a8a9d8a34ff168f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -623,6 +625,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0
 --- !u!1001 &2770283897267827444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -740,6 +744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0
 --- !u!1001 &5057524918733465600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -932,6 +938,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0
 --- !u!1001 &5818360147971812476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1123,6 +1131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0
 --- !u!1001 &6482511937279603561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1240,6 +1250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0
 --- !u!1001 &6818743505492994830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1357,6 +1369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0
 --- !u!1001 &8181438982556680511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1374,15 +1388,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2218521243428803440, guid: d32324f5ed6128142adf005e56305ee0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.76
+      value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 2218521243428803440, guid: d32324f5ed6128142adf005e56305ee0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.27199998
+      value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 2218521243428803440, guid: d32324f5ed6128142adf005e56305ee0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.56
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 2218521243428803440, guid: d32324f5ed6128142adf005e56305ee0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1536,6 +1550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0
 --- !u!1001 &8599495134857061479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1653,6 +1669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0
 --- !u!1001 &9087454616602224065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1770,3 +1788,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 0
+  enableRotation: 0
+  rotationSpeed: 0

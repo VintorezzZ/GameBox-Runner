@@ -5,6 +5,7 @@ using System.Diagnostics;
 using UnityEngine;
 using Utils;
 using Debug = System.Diagnostics.Debug;
+using Random = UnityEngine.Random;
 
 namespace MyGame.Player
 {
@@ -68,6 +69,7 @@ namespace MyGame.Player
             strafeSpeed = GameSettings.Config.strafeSpeed;
             acceleration = GameSettings.Config.acceleration;
             _animator = animator;
+            _animator.SetInteger("dance", Random.Range(0,4));
         }
 
         private void ProcessInputs()
@@ -155,7 +157,7 @@ namespace MyGame.Player
         {
             if(_charController.isGrounded)
                 _animator.SetBool("isFlying", false);
-            else if (_gravity <= -10f)
+            else if (_gravity <= -9f)
                 _animator.SetBool("isFlying", true);
             
             var yMovement = Vector3.zero;

@@ -74,7 +74,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
                 break;
         }
 #if UNITY_EDITOR
-        Debug.LogError("create");
+        //Debug.LogError("create");
 #endif
     }
     
@@ -137,7 +137,7 @@ public class WorldBuilder : SingletonBehaviour<WorldBuilder>
     {
         yield return new WaitForSecondsRealtime(1);
 #if UNITY_EDITOR
-        Debug.LogError("return");
+        //Debug.LogError("return");
 #endif
         PoolManager.Return(poolItem);
     }

@@ -1,10 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using Utils;
-using Debug = System.Diagnostics.Debug;
 using Random = UnityEngine.Random;
 
 namespace MyGame.Player
@@ -22,6 +18,7 @@ namespace MyGame.Player
         private Coroutine _slideRoutine;
         
         public float gravityAmount = -20;
+        public StuntController stuntController;
         [SerializeField] private float airSlideGravityForce;
         [SerializeField] private float jumpForce;
         
@@ -41,7 +38,6 @@ namespace MyGame.Player
         public bool isRocketMovement = false;
         private float _cachedSpeed = 0;
         private float _rocketTargetHeight = 0;
-
         public float Speed { get; private set; }
 
         private global::Player _player;
@@ -70,6 +66,7 @@ namespace MyGame.Player
             acceleration = GameSettings.Config.acceleration;
             _animator = animator;
             _animator.SetInteger("dance", Random.Range(0,4));
+            stuntController.Init(animator);
         }
 
         private void ProcessInputs()
@@ -151,6 +148,7 @@ namespace MyGame.Player
             ProcessInputs();
             Move();
             SpeedControl();
+            stuntController.Tick();
         }
     
         private void Move()
@@ -202,14 +200,16 @@ namespace MyGame.Player
         private void Jump()
         {
             _gravity += Mathf.Sqrt(jumpForce * -3.0f * gravityAmount);
-            if (false/*_player.canMakeTrick && _canJump*/)
+            if (stuntController.canMakeTrick && _canJump)
             {
-                _animator.SetInteger("trick", Random.Range(1, 4));
+                stuntController.DoStunt();
+                Debug.LogError("stunt");
             }            
             else
             {
                 _animator.SetTrigger("jump");
                 _animator.SetBool("isFlying", true);
+                Debug.LogError("jump");
             }
         }
     

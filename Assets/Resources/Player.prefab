@@ -7214,6 +7214,7 @@ GameObject:
   - component: {fileID: 8727077871878123062}
   - component: {fileID: -2904332653228642779}
   - component: {fileID: -8317029546905257348}
+  - component: {fileID: 6962633098207555264}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -7311,6 +7312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityAmount: -20
+  stuntController: {fileID: 6962633098207555264}
   airSlideGravityForce: -25
   jumpForce: 1.2
   startSpeed: 10
@@ -7349,6 +7351,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awesomeSpritePrefab: {fileID: 7830139675168065388, guid: 2de659bc961069e45a449b568fd89169, type: 3}
   awesomeSprites: []
+--- !u!114 &6962633098207555264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824829187514955151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc883ffb6aed48dc978fafd684ab5416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMakeTrick: 0
 --- !u!1 &6818908830578527746
 GameObject:
   m_ObjectHideFlags: 0

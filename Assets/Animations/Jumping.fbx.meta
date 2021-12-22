@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 1742679161841691293
-    second: Jumping
+    second: Jumping side 2
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -26,14 +26,43 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Jumping side 2
+      takeName: Jumping
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -79,8 +108,495 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: santa:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: santa:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Jumping(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:Santa_lp2
+      parentName: Jumping(Clone)
+      position: {x: 0.0000076334545, y: 0.00044346356, z: -0.00048288828}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:Hips
+      parentName: Jumping(Clone)
+      position: {x: 0.000020840698, y: 0.012668266, z: 0}
+      rotation: {x: 0.000000011641532, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:Spine
+      parentName: santa:Hips
+      position: {x: 1.7347234e-20, y: 0.0011986613, z: -0.00005483277}
+      rotation: {x: -0.022854596, y: -3.3257782e-11, z: 0.0000000014548116, w: 0.9997388}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: santa:Spine1
+      parentName: santa:Spine
+      position: {x: 6.938894e-20, y: 0.0013998994, z: 0}
+      rotation: {x: -0.000000011175871, y: -0.0000000057481873, z: -0.0000000017196644, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:Spine2
+      parentName: santa:Spine1
+      position: {x: -3.469447e-20, y: 0.0015998852, z: 0}
+      rotation: {x: 0.000000022351742, y: -0.000000011496378, z: -0.0000000034393288, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: santa:Neck
+      parentName: santa:Spine2
+      position: {x: 1.7347234e-20, y: 0.0017998698, z: 1.745851e-11}
+      rotation: {x: 0.022854574, y: 0.000000017125162, z: 0.000000014947206, w: 0.9997388}
+      scale: {x: 1, y: 1.0000004, z: 1.0000002}
+    - name: santa:Head
+      parentName: santa:Neck
+      position: {x: -0, y: 0.0015596342, z: -0.000030056535}
+      rotation: {x: -0, y: -0, z: -0.000000017462296, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: santa:HeadTop_End
+      parentName: santa:Head
+      position: {x: 5.551115e-19, y: 0.0029897094, z: -0.00005761616}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:RightShoulder
+      parentName: santa:Spine2
+      position: {x: 0.0007847851, y: 0.0015436076, z: -0.000008873916}
+      rotation: {x: -0.56713396, y: -0.42027396, z: 0.57347745, w: -0.41575527}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000007}
+    - name: santa:RightArm
+      parentName: santa:RightShoulder
+      position: {x: -1.110223e-18, y: 0.0017194556, z: 4.440892e-18}
+      rotation: {x: -0.12593767, y: -0.08334268, z: 0.017451437, w: 0.98837703}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: santa:RightForeArm
+      parentName: santa:RightArm
+      position: {x: -0, y: 0.003009341, z: 0}
+      rotation: {x: -0.00047539175, y: -0.000014312565, z: 0.030177316, w: 0.99954444}
+      scale: {x: 1.0000005, y: 0.9999998, z: 1.0000002}
+    - name: santa:RightHand
+      parentName: santa:RightForeArm
+      position: {x: -0, y: 0.0029410021, z: 0}
+      rotation: {x: -0.08079605, y: -0.13485014, z: -0.026630402, w: -0.98720735}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: santa:RightHandIndex1
+      parentName: santa:RightHand
+      position: {x: 2.220446e-18, y: 0.00082468335, z: 7.9866544e-11}
+      rotation: {x: -0.048663877, y: 0.0012215226, z: -0.02506106, w: 0.9985}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000005}
+    - name: santa:RightHandIndex2
+      parentName: santa:RightHandIndex1
+      position: {x: 0.00010002153, y: 0.0005522113, z: 0}
+      rotation: {x: 0.02565777, y: 0.006725164, z: -0.12787348, w: 0.9914357}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: santa:RightHandIndex3
+      parentName: santa:RightHandIndex2
+      position: {x: -0.000052890584, y: 0.0004755408, z: -2.7755575e-19}
+      rotation: {x: -0.0054569985, y: -1.016076e-12, z: -0.000000028805383, w: 0.9999851}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: santa:RightHandIndex4
+      parentName: santa:RightHandIndex3
+      position: {x: -0.000047130943, y: 0.00045913816, z: 0}
+      rotation: {x: 0.000000043711385, y: -0.00000004371138, z: -0.000000043711392, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:RightHandThumb1
+      parentName: santa:RightHand
+      position: {x: -0.00027516202, y: 0.00046130488, z: 4.520375e-11}
+      rotation: {x: -0.02060344, y: -0.00664486, z: 0.23740764, w: 0.9711689}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000004}
+    - name: santa:RightHandThumb2
+      parentName: santa:RightHandThumb1
+      position: {x: -0.000036968864, y: 0.00042811708, z: 0}
+      rotation: {x: 0.03714755, y: -0.00032300592, z: 0.0024270571, w: 0.9993068}
+      scale: {x: 0.99999934, y: 1.0000002, z: 1.0000001}
+    - name: santa:RightHandThumb3
+      parentName: santa:RightHandThumb2
+      position: {x: -0.000017884237, y: 0.00039885793, z: 0}
+      rotation: {x: -0.020313239, y: -0.0026101298, z: 0.07079833, w: 0.9972804}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000001}
+    - name: santa:RightHandThumb4
+      parentName: santa:RightHandThumb3
+      position: {x: 0.000054853102, y: 0.00033921536, z: 0}
+      rotation: {x: 0.00000013315805, y: 0.00000013315805, z: -1.7614325e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:LeftShoulder
+      parentName: santa:Spine2
+      position: {x: -0.0007847851, y: 0.0015438675, z: -0.000014559618}
+      rotation: {x: 0.5650358, y: -0.4217747, z: 0.57541347, w: 0.41441536}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000002}
+    - name: santa:LeftArm
+      parentName: santa:LeftShoulder
+      position: {x: -0, y: 0.0017194556, z: 0}
+      rotation: {x: -0.124791056, y: 0.10106958, z: -0.025245508, w: 0.986699}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: santa:LeftForeArm
+      parentName: santa:LeftArm
+      position: {x: -2.220446e-18, y: 0.0030114672, z: 2.220446e-18}
+      rotation: {x: -0.00048069656, y: 0.000012308359, z: -0.025596648, w: 0.9996723}
+      scale: {x: 0.9999997, y: 1, z: 0.99999994}
+    - name: santa:LeftHand
+      parentName: santa:LeftForeArm
+      position: {x: -0, y: 0.0029403956, z: 5.551115e-19}
+      rotation: {x: 0.10221824, y: -0.1594187, z: -0.036131185, w: 0.98123986}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: santa:LeftHandIndex1
+      parentName: santa:LeftHand
+      position: {x: -2.7755575e-19, y: 0.00083140086, z: 2.7532648e-11}
+      rotation: {x: -0.09131499, y: -0.0015130527, z: 0.016497597, w: 0.9956843}
+      scale: {x: 0.99999994, y: 0.9999991, z: 0.99999934}
+    - name: santa:LeftHandIndex2
+      parentName: santa:LeftHandIndex1
+      position: {x: -0.000097750184, y: 0.00054027163, z: 5.551115e-19}
+      rotation: {x: 0.026629651, y: -0.008875811, z: 0.11825758, w: 0.99258614}
+      scale: {x: 0.9999999, y: 0.99999964, z: 0.9999999}
+    - name: santa:LeftHandIndex3
+      parentName: santa:LeftHandIndex2
+      position: {x: 0.000043818436, y: 0.00048744926, z: 4.440892e-18}
+      rotation: {x: 0.032124408, y: -0.00000014069876, z: -0.000000052394522, w: 0.9994839}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: santa:LeftHandIndex4
+      parentName: santa:LeftHandIndex3
+      position: {x: 0.00005393174, y: 0.00041317288, z: 2.220446e-18}
+      rotation: {x: -7.581082e-17, y: -2.203439e-17, z: -8.156602e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:LeftHandThumb1
+      parentName: santa:LeftHand
+      position: {x: 0.0002846184, y: 0.00047882143, z: 1.1831352e-11}
+      rotation: {x: -0.034230974, y: 0.0111287795, z: -0.23629093, w: 0.97101545}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000005}
+    - name: santa:LeftHandThumb2
+      parentName: santa:LeftHandThumb1
+      position: {x: 0.00004109621, y: 0.00044372148, z: 2.220446e-18}
+      rotation: {x: 0.015941393, y: 0.00021855802, z: -0.012174661, w: 0.9997988}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: santa:LeftHandThumb3
+      parentName: santa:LeftHandThumb2
+      position: {x: -0.000002873704, y: 0.00038774643, z: 1.6653345e-18}
+      rotation: {x: -0.028601587, y: 0.0019816393, z: -0.029642878, w: 0.9991493}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000001}
+    - name: santa:LeftHandThumb4
+      parentName: santa:LeftHandThumb3
+      position: {x: -0.000038222508, y: 0.00031255782, z: -2.220446e-18}
+      rotation: {x: -7.391757e-24, y: 2.82098e-40, z: 1.8479392e-24, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:LeftUpLeg
+      parentName: santa:Hips
+      position: {x: -0.0011936498, y: -0.00066664815, z: 0.000013601556}
+      rotation: {x: 0.0010570732, y: -0.022375774, z: 0.99863535, w: 0.047177255}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
+    - name: santa:LeftLeg
+      parentName: santa:LeftUpLeg
+      position: {x: -0, y: 0.0054382253, z: 1.110223e-18}
+      rotation: {x: -0.0097187795, y: 0.0001426374, z: -0.014673585, w: 0.9998451}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000002}
+    - name: santa:LeftFoot
+      parentName: santa:LeftLeg
+      position: {x: -4.1633362e-19, y: 0.004898573, z: 2.7755575e-19}
+      rotation: {x: 0.43544477, y: 0.1200876, z: -0.059528843, w: 0.8901816}
+      scale: {x: 0.9999996, y: 0.9999997, z: 0.9999997}
+    - name: santa:LeftToeBase
+      parentName: santa:LeftFoot
+      position: {x: 5.551115e-19, y: 0.0022084084, z: 0}
+      rotation: {x: 0.34455064, y: 0.08809577, z: -0.032496195, w: 0.9340599}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000001}
+    - name: santa:LeftToe_End
+      parentName: santa:LeftToeBase
+      position: {x: 2.7755575e-19, y: 0.00086234283, z: 0}
+      rotation: {x: 2.2517411e-18, y: -4.8221917e-17, z: 3.3476764e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: santa:RightUpLeg
+      parentName: santa:Hips
+      position: {x: 0.0011936498, y: -0.00066664815, z: -0.0000037389993}
+      rotation: {x: -0.0009553676, y: -0.020220608, z: 0.9986809, w: -0.047188077}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: santa:RightLeg
+      parentName: santa:RightUpLeg
+      position: {x: -0, y: 0.0054372326, z: -5.551115e-19}
+      rotation: {x: -0.013318871, y: -0.00019525609, z: 0.014662837, w: 0.99980384}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000004}
+    - name: santa:RightFoot
+      parentName: santa:RightLeg
+      position: {x: -0, y: 0.004899497, z: 1.110223e-18}
+      rotation: {x: 0.43336266, y: -0.12044333, z: 0.05947915, w: 0.89115226}
+      scale: {x: 1.0000006, y: 1, z: 1.0000004}
+    - name: santa:RightToeBase
+      parentName: santa:RightFoot
+      position: {x: -0, y: 0.0021895585, z: 1.110223e-18}
+      rotation: {x: 0.34794247, y: -0.08698477, z: 0.032442257, w: 0.93290794}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1.0000004}
+    - name: santa:RightToe_End
+      parentName: santa:RightToeBase
+      position: {x: -5.551115e-19, y: 0.0008554391, z: 0}
+      rotation: {x: -2.9567027e-23, y: -1.4783514e-23, z: 1.8479392e-24, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -91,13 +607,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

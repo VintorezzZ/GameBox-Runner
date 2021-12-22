@@ -27,7 +27,7 @@ namespace Views
 
         private void UpdateBestScore()
         {
-            bestScoreText.text = PlayerPrefs.GetFloat("bestscore").ToString();
+            bestScoreText.text = PlayerPrefs.GetInt("HighScore_distance").ToString();
         }
     }
 }

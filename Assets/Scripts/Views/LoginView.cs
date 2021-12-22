@@ -32,12 +32,11 @@ public class LoginView : View
 
     public override void Show()
     {
-        base.Show();
-        playerNameInput.text = "Player " + Random.Range(1000, 10000);
-        
-        if(PlayerPrefs.HasKey("playername"))
+        if(!PlayerPrefs.HasKey("playername"))
         {
-            LoadMainMenu();
+            playerNameInput.text = "Player " + Random.Range(1000, 10000);
         }
+
+        LoadMainMenu();
     }
 }

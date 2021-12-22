@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Com.MyCompany.MyGame;
 using MyGame.Other;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,9 +14,9 @@ namespace Views
     {
         [SerializeField] private PowerUpItemView[] powerUpsList;
         [SerializeField] private Image[] hearts;
-        [SerializeField] private Text scoreText;
-        [SerializeField] private Text bulletsText;
-        [SerializeField] private Text coinsText;
+        [SerializeField] private TMP_Text scoreText;
+        [SerializeField] private TMP_Text bulletsText;
+        [SerializeField] private TMP_Text coinsText;
         public Text timerText;
         private Player _player => RoomController.Instance.localPlayer;
         private Dictionary<PowerUpType, PowerUpItemView> powerUps = new Dictionary<PowerUpType, PowerUpItemView>();

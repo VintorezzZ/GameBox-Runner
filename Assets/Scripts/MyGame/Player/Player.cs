@@ -124,9 +124,9 @@ public class Player : MonoBehaviour
 
     public void CheckForBestScore()
     {
-        if (score > PlayerPrefs.GetFloat("bestscore"))
+        if (score > PlayerPrefs.GetInt("HighScore_distance"))
         {
-            PlayerPrefs.SetFloat("bestscore", score);
+            PlayerPrefs.SetInt("HighScore_distance", Mathf.RoundToInt(score));
         }
     }
     
@@ -161,10 +161,17 @@ public class Player : MonoBehaviour
         _animator.SetTrigger("dead");
         score = Mathf.RoundToInt(score);
         CheckForBestScore();
+        ApplyCoins();
         
         EventHub.OnGameOvered();
     }
-    
+
+    private void ApplyCoins()
+    {
+        var totalCoins = PlayerPrefs.GetInt("Total_coins") + _coins;
+        PlayerPrefs.SetInt("Total_coins", totalCoins);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(!canMove || moveController.isRocketMovement)

@@ -7293,6 +7293,7 @@ MonoBehaviour:
   canMove: 1
   score: 0
   moveController: {fileID: 8727077871878123062}
+  snowParticles: {fileID: 5074380796488368659}
   _animator: {fileID: 6818908830941468443}
   gunHolder: {fileID: 1014875303}
   rayCastPoint: {fileID: 6818908830578527745}
@@ -7903,6 +7904,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1c2d2ee05c83e942bacb711d6675f3c, type: 3}
+--- !u!1 &5074380796488368659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6345986472174935175, guid: e1c2d2ee05c83e942bacb711d6675f3c, type: 3}
+  m_PrefabInstance: {fileID: 2196256197414952596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1752475870200204488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 443781467799097948, guid: e1c2d2ee05c83e942bacb711d6675f3c, type: 3}
@@ -9133,11 +9139,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee70888dc4179ae4ebd189031faa2548, type: 3}
---- !u!4 &712075021086183676 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7491464411628894125, guid: ee70888dc4179ae4ebd189031faa2548, type: 3}
-  m_PrefabInstance: {fileID: 7932751293621970769}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8750131256106797158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1691239381585784631, guid: ee70888dc4179ae4ebd189031faa2548, type: 3}
@@ -9149,3 +9150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413245e8af9d4b642a41e6f375845ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &712075021086183676 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7491464411628894125, guid: ee70888dc4179ae4ebd189031faa2548, type: 3}
+  m_PrefabInstance: {fileID: 7932751293621970769}
+  m_PrefabAsset: {fileID: 0}

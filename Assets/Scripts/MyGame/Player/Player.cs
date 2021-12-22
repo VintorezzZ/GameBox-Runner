@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public float score;
     public MoveController moveController;
     public WeaponManager weaponManager;
+    public GameObject snowParticles;
 
     #endregion
 
@@ -205,5 +206,10 @@ public class Player : MonoBehaviour
     private void OnDestroy()
     {
         EventHub.gameStarted -= OnGameStarted;
+    }
+
+    public GameObject GetSnowEffect()
+    {
+        return snowParticles;
     }
 }

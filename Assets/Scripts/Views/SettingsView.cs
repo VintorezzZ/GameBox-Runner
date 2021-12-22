@@ -8,7 +8,7 @@ public class SettingsView : View
     [SerializeField] private Button backButton;
     [SerializeField] private Button enterButton;
     [SerializeField] private Toggle postProcessingToggle;
-    
+    [SerializeField] private Toggle snowToggle;
     
     public InputField playerNameInput;
         
@@ -27,6 +27,11 @@ public class SettingsView : View
         postProcessingToggle.onValueChanged.AddListener((value) =>
         {
             GameManager.Instance.postProcessVolume.enabled = value;
+        });
+        snowToggle.onValueChanged.AddListener((value) =>
+        {
+            var snow = RoomController.Instance.localPlayer.GetSnowEffect();
+            snow.SetActive(value);
         });
     }
 

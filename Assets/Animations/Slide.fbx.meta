@@ -1,17 +1,12 @@
 fileFormatVersion: 2
-guid: fc58984ef4a60fd45b4cc282b2d12d23
+guid: 1da2726f211b92b47a8bd2aa018914c1
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: ce35286499abbb142962a7a6c0c9f950, type: 2}
+      74: -1192840080986744117
+    second: Slide
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

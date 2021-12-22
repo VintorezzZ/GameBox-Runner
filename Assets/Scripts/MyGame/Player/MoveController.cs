@@ -148,7 +148,6 @@ namespace MyGame.Player
             ProcessInputs();
             Move();
             SpeedControl();
-            stuntController.Tick();
         }
     
         private void Move()

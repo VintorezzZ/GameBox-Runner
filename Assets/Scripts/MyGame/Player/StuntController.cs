@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace MyGame.Player
 {
@@ -10,15 +11,6 @@ namespace MyGame.Player
         public void Init(Animator animator)
         {
             _animator = animator;
-        }
-        
-        public void Tick()
-        {
-            if(_animator.IsInTransition(0) && _animator.GetCurrentAnimatorStateInfo(0).IsTag("stunt"))
-            {
-                _animator.SetInteger("trick", 0);
-                canMakeTrick = false;
-            }
         }
 
         private void OnTriggerStay(Collider other)
@@ -35,6 +27,14 @@ namespace MyGame.Player
         public void DoStunt()
         {
             _animator.SetInteger("trick", Random.Range(1, 4));
+            StartCoroutine(ResetStunt());
+            canMakeTrick = false;
+        }
+
+        private IEnumerator ResetStunt()
+        {
+            yield return new WaitForSeconds(0.2f);
+            _animator.SetInteger("trick", 0);
         }
     }
 }

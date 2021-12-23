@@ -24,7 +24,6 @@ public class Player : MonoBehaviour
     #region Private Variables
 
     [SerializeField] private Animator _animator;
-    [SerializeField] private Transform gunHolder;
     [SerializeField] private Transform rayCastPoint;
     [SerializeField] private int startHealth = 3;
     [SerializeField] private int startBullets = 3;
@@ -84,7 +83,6 @@ public class Player : MonoBehaviour
         
         AddHealth(Health);
         
-        weaponManager = new WeaponManager(gunHolder, rayCastPoint);
         pickUpHandler.Init(this);
         moveController.Init(this, _animator);
         EventHub.gameStarted += OnGameStarted;
@@ -104,7 +102,6 @@ public class Player : MonoBehaviour
         if (_health <= 0f)
             StartDeathRoutine();
         
-        weaponManager.Tick();
         moveController.Tick();
         
         UpdateScore();

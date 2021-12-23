@@ -11,6 +11,7 @@ namespace Utils
         public static event Action<int> healthChanged;
         public static event Action<int> bulletsChanged;
         public static event Action<int> coinsChanged;
+        public static event Action<int> playerModelChanged;
         public static event Action audioSettingsChanged;
         public static event Action bonusRocketPickedUp;
 
@@ -52,6 +53,11 @@ namespace Utils
         public static void OnCoinsChanged(int coins)
         {
             coinsChanged?.Invoke(coins);
+        }
+        
+        public static void OnPlayerModelChanged(int model)
+        {
+            playerModelChanged?.Invoke(model);
         }
 
         public static void OnBonusRocketPickUp()

@@ -16,6 +16,10 @@ public class PlayerModelsHandler : MonoBehaviour
       
       foreach (PlayerModel playerModel in playerModels)
       {
+         if(playerModel.modelId == 0)
+            PlayerPrefs.SetInt($"player_model_{playerModel.modelId}_own_status", 1);
+         
+         playerModel.Init();
          playerModel.gameObject.SetActive(false);
       }
       
@@ -38,8 +42,6 @@ public class PlayerModelsHandler : MonoBehaviour
          playerModels[0].gameObject.SetActive(true);
          currentModelIndex = 0;
       }
-      
-      currentModelIndex = 0;
    }
    
    public void ActivateModel(int modelIndex)
@@ -50,7 +52,7 @@ public class PlayerModelsHandler : MonoBehaviour
       DeActivateCurrentModel();
       playerModels[modelIndex].gameObject.SetActive(true);
       currentModelIndex = modelIndex;
-      PlayerPrefs.SetInt("playermodel", currentModelIndex);
+      EventHub.OnPlayerModelChanged(modelIndex);
    }
 
    private void DeActivateCurrentModel()

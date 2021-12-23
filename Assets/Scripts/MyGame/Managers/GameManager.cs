@@ -34,6 +34,8 @@ using Views;
                     LoadGameScene();
                 }
             };
+            
+            //PlayerPrefs.DeleteAll();
         }
         private void InitGameScene(Scene scene)
         {

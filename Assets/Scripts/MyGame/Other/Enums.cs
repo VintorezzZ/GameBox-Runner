@@ -19,3 +19,9 @@ public enum BonusType
     CoinPack,
     Rocket
 }
+
+public enum SellItemStatus
+{
+    ForSale = 0,
+    Bought = 1
+}

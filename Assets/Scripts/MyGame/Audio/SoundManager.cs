@@ -9,7 +9,7 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     public static float CurrentVolume => AudioListener.volume;
     public float globalVolume => AudioSettings.globalVolume;
     
-    [SerializeField] AudioSource musicSource, uiSource, inGameSource, footStepsSource;
+    [SerializeField] AudioSource musicSource, uiSource, inGameSource, footStepsSource, coinPickUpSource;
     [SerializeField] AudioMixer uiMixer, musicMixer, inGameMixer;
 
     [SerializeField] AudioClip music;
@@ -35,6 +35,8 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     private Timer _rocketLoopTimer = new Timer();
     private Timer _pickUpCoinTimer = new Timer();
 
+    private bool _gameStarted;
+    
     private void Awake()
     {
         InitializeSingleton();
@@ -64,6 +66,7 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         FadeMixerGroup(inGameMixer, AudioSettings.globalVolume * .5f);
         FadeMixerGroup(musicMixer, AudioSettings.musicVolume * .5f);
         PlayLose();
+        _gameStarted = false;
     }
 
     private void OnGamePaused(bool paused)
@@ -102,6 +105,7 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     {
         musicSource.clip = music;
         musicSource.Play();
+        _gameStarted = true;
     }
     
     public void StopMusic()
@@ -114,14 +118,23 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     //     uiSource.PlayOneShot(hitSfx);
     // }
     private float _lastCoinPickUpTime;
+    private float _coinPickUpDelay = 0.7f;
     private void OnCoinPickUp(int nothing)
     {
-        // if (!_pickUpCoinTimer.IsStarted)
-        // {
-        //     uiSource.
-        // }
+        if(!_gameStarted)
+            return;
         
-        uiSource.PlayOneShot(coinPickUpSfx);
+        if (Time.time > _lastCoinPickUpTime + _coinPickUpDelay)
+        {
+            coinPickUpSource.pitch = 1;
+            _lastCoinPickUpTime = Time.time;
+        }
+        else
+        {
+            coinPickUpSource.pitch += 0.1f;
+        }
+        
+        coinPickUpSource.PlayOneShot(coinPickUpSfx);
     }
 
     public void PlayFire(AudioSource audioSource, AudioClip shootSound)

@@ -15,6 +15,7 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     [SerializeField] AudioClip music;
     [SerializeField] AudioClip clickSfx;
     [SerializeField] AudioClip loseSfx;
+    [SerializeField] AudioClip loseVox;
     
     [SerializeField] AudioClip coinPickUpSfx;
     [SerializeField] AudioClip cookieManPickUpSfx;
@@ -94,6 +95,7 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     public void PlayLose() 
     {
         uiSource.PlayOneShot(loseSfx);
+        uiSource.PlayOneShot(loseVox);
     }
 
     // public void PlayPickUp()
@@ -118,7 +120,7 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     //     uiSource.PlayOneShot(hitSfx);
     // }
     private float _lastCoinPickUpTime;
-    private float _coinPickUpDelay = 0.7f;
+    private float _coinPickUpDelay = 0.8f;
     private void OnCoinPickUp(int nothing)
     {
         if(!_gameStarted)

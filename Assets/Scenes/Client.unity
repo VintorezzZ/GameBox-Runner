@@ -331,6 +331,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 1d41f04e9d2c4bc4c852cb215c3891e6, type: 3}
     - target: {fileID: 1381600989918874713, guid: 39b5ef3bbd6d1184cb3c0fc4964c3eb8, type: 3}
+      propertyPath: loseVox
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c34c02405e18e240a2fa095dc780542, type: 3}
+    - target: {fileID: 1381600989918874713, guid: 39b5ef3bbd6d1184cb3c0fc4964c3eb8, type: 3}
       propertyPath: slideSFX
       value: 
       objectReference: {fileID: 8300000, guid: 5c28352f2cd157742b8f3caa348cd34b, type: 3}

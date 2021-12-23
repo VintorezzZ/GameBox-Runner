@@ -23,7 +23,7 @@ namespace MyGame.Managers
             if(_player.moveController.isRocketMovement)
                 return;
             
-            CheckForBulletBonus(other);
+            //CheckForBulletBonus(other);
             CheckForBonus(other);
         }
 
@@ -39,7 +39,7 @@ namespace MyGame.Managers
                 if (_player.Ammo > 30) 
                     _player.Ammo = 30;
             
-                SoundManager.Instance.PlayPickUp();
+                //SoundManager.Instance.PlayPickUp();
                 
                 PoolManager.Return(other.gameObject.GetComponent<PoolItem>());
             }
@@ -51,20 +51,27 @@ namespace MyGame.Managers
                 return;
 
             if(bonus.coinsToAdd != 0)
-            {
                 _player.Coins += bonus.coinsToAdd;
-                SoundManager.Instance.PlayCoinPickUp();
-            }
 
-            if (bonus is Rocket)
+            switch (bonus.type)
             {
-                GetItemFromPool(PoolType.RocketPickUpFX, _player.transform.position);
-                EventHub.OnBonusRocketPickUp();
-            }
-
-            if (bonus is Coin)
-            {
-                GetItemFromPool(PoolType.CoinPickUpFX, bonus.transform.position);
+                case BonusType.Coin:
+                {
+                    GetItemFromPool(PoolType.CoinPickUpFX, bonus.transform.position);
+                    break;
+                }
+                case BonusType.CookieMan:
+                {
+                    SoundManager.Instance.PlayCookieManPickUp();
+                    GetItemFromPool(PoolType.CoinPickUpFX, bonus.transform.position);
+                    break;
+                }                 
+                case BonusType.Rocket:
+                {
+                    GetItemFromPool(PoolType.RocketPickUpFX, _player.transform.position);
+                    EventHub.OnBonusRocketPickUp();
+                    break;
+                }
             }
                 
             other.gameObject.SetActive(false);

@@ -10,6 +10,7 @@ namespace MyGame.Other
         [SerializeField] private float rotationSpeed;
         [SerializeField] private bool enableFlare;
         [SerializeField] private GameObject flare;
+        public BonusType type;
     
         private void OnEnable()
         {

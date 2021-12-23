@@ -10,13 +10,14 @@
     ExplosionsFX, 
     RoadGraphics,
     CoinPickUpFX,
-    RocketPickUpFX
+    RocketPickUpFX,
+    AudioSource
 }
 
 public enum BonusType
 {
     Coin,
-    CoinPack,
+    CookieMan,
     Rocket
 }
 

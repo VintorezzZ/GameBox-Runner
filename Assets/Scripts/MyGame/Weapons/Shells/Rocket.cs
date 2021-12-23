@@ -40,7 +40,7 @@ namespace MyGame.Weapons.Shells
         {
             explosion.position = collision.position;
             explosion.gameObject.SetActive(true);
-            SoundManager.Instance.PlayBoom();
+            //SoundManager.Instance.PlayBoom();
         }
 
 

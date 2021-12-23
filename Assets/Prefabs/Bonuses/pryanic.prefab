@@ -143,10 +143,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsToAdd: 20
-  enableRotation: 0
+  enableRotation: 1
   rotationSpeed: 0
   enableFlare: 1
   flare: {fileID: 1996362081487525447}
+  type: 1
 --- !u!1001 &4888457918588771097
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -50,6 +50,7 @@ MonoBehaviour:
   rotationSpeed: 0
   enableFlare: 1
   flare: {fileID: 1714707164052576514}
+  type: 2
 --- !u!136 &6238153530596126098
 CapsuleCollider:
   m_ObjectHideFlags: 0

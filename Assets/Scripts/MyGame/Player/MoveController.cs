@@ -139,6 +139,7 @@ namespace MyGame.Player
                 {
                     _animator.SetBool("strafe mirror", sign < 0);
                     _animator.SetTrigger("strafe");
+                    SoundManager.Instance.PlayStrafe();
                 }
             }
         }
@@ -153,10 +154,13 @@ namespace MyGame.Player
         private void Move()
         {
             if(_charController.isGrounded)
+            {
                 _animator.SetBool("isFlying", false);
+            }            
             else if (_gravity <= -9f)
+            {
                 _animator.SetBool("isFlying", true);
-            
+            }            
             var yMovement = Vector3.zero;
             
             if(!isRocketMovement)
@@ -180,6 +184,26 @@ namespace MyGame.Player
             var zMovement = Vector3.forward * Speed;
             
             _charController.Move((xMovement + yMovement + zMovement) * Time.deltaTime);
+
+            PlayFootSteps();
+        }
+
+        private void PlayFootSteps()
+        {
+            if(!_player.canMove)
+            {
+                SoundManager.Instance.StopFootSteps();
+                return;
+            }
+            
+            if (_charController.isGrounded)
+            {
+                SoundManager.Instance.PlayFootSteps();
+            }
+            else
+            {
+                SoundManager.Instance.StopFootSteps();
+            }
         }
 
         private bool CanStrafe(int sign)
@@ -202,14 +226,14 @@ namespace MyGame.Player
             if (stuntController.canMakeTrick && _canJump)
             {
                 stuntController.DoStunt();
-                Debug.LogError("stunt");
             }            
             else
             {
                 _animator.SetTrigger("jump");
                 _animator.SetBool("isFlying", true);
-                Debug.LogError("jump");
             }
+            
+            SoundManager.Instance.PlayJump();
         }
     
         private void Slide()
@@ -229,6 +253,7 @@ namespace MyGame.Player
                 StopCoroutine(_slideRoutine);
             
             _slideRoutine = StartCoroutine(SlideRoutine());
+            SoundManager.Instance.PlaySlide();
         }
 
         private IEnumerator SlideRoutine()

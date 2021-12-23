@@ -185,7 +185,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            SoundManager.Instance.PlayHit();
+            SoundManager.Instance.PlayLose();
             if(!god)
                 Health--;
             ViewManager.GetView<InGameView>().RemoveHealth(Health); //Event OnHit

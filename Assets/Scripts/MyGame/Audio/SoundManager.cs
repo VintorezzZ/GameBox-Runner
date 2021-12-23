@@ -9,20 +9,31 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     public static float CurrentVolume => AudioListener.volume;
     public float globalVolume => AudioSettings.globalVolume;
     
-    [SerializeField] AudioSource musicSource, uiSource, inGameSource;
+    [SerializeField] AudioSource musicSource, uiSource, inGameSource, footStepsSource;
     [SerializeField] AudioMixer uiMixer, musicMixer, inGameMixer;
 
-    [SerializeField] AudioClip clickSfx;
-    [SerializeField] AudioClip pickUpSfx;
-    [SerializeField] AudioClip loseSfx;
-    [SerializeField] AudioClip winSfx;
-    [SerializeField] AudioClip boomSfx;
-    [SerializeField] AudioClip fireSfx;
     [SerializeField] AudioClip music;
-    [SerializeField] AudioClip hitSfx;
+    [SerializeField] AudioClip clickSfx;
+    [SerializeField] AudioClip loseSfx;
+    
     [SerializeField] AudioClip coinPickUpSfx;
+    [SerializeField] AudioClip cookieManPickUpSfx;
+    
+    [SerializeField] AudioClip rocketPickUpSfx;
+    [SerializeField] AudioClip rocketLoopSFX;
+    [SerializeField] AudioClip rocketEndSFX;
+    [SerializeField] AudioClip rocketStartVox;
+    
+    [SerializeField] AudioClip jumpStartSFX;
+    [SerializeField] AudioClip[] jumpVoxes;    
+    
+    [SerializeField] AudioClip slideSFX;
+    [SerializeField] AudioClip slideVox;
+    
 
     private Coroutine _fadeCoroutine;
+    private Timer _rocketLoopTimer = new Timer();
+    private Timer _pickUpCoinTimer = new Timer();
 
     private void Awake()
     {
@@ -38,6 +49,8 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         EventHub.audioSettingsChanged += OnAudioSettingsChanged;
         EventHub.gamePaused += OnGamePaused;
         EventHub.gameOvered += OnGameOvered;
+        EventHub.bonusRocketPickedUp += OnRocketPickUp;
+        EventHub.coinsChanged += OnCoinPickUp;
     }
 
     private void OnAudioSettingsChanged()
@@ -65,10 +78,10 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         _fadeCoroutine = StartCoroutine(MixerGroupFader.StartFade(audioMixer, exposedParam, duration, targetVolume));
     }
 
-    public void PlayBoom()
-    {
-        inGameSource.PlayOneShot(boomSfx);
-    }
+    // public void PlayBoom()
+    // {
+    //     inGameSource.PlayOneShot(boomSfx);
+    // }
 
     public void PlayClick()
     {
@@ -80,15 +93,10 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         uiSource.PlayOneShot(loseSfx);
     }
 
-    public void PlayWin()
-    {
-        uiSource.PlayOneShot(winSfx);
-    }
-
-    public void PlayPickUp()
-    {
-        uiSource.PlayOneShot(pickUpSfx);
-    }
+    // public void PlayPickUp()
+    // {
+    //     uiSource.PlayOneShot(pickUpSfx);
+    // }
 
     public void PlayMusic()
     {
@@ -101,13 +109,18 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         musicSource.Stop();
     }
 
-    public void PlayHit()
+    // public void PlayHit()
+    // {
+    //     uiSource.PlayOneShot(hitSfx);
+    // }
+    private float _lastCoinPickUpTime;
+    private void OnCoinPickUp(int nothing)
     {
-        uiSource.PlayOneShot(hitSfx);
-    }
-
-    public void PlayCoinPickUp()
-    {
+        // if (!_pickUpCoinTimer.IsStarted)
+        // {
+        //     uiSource.
+        // }
+        
         uiSource.PlayOneShot(coinPickUpSfx);
     }
 
@@ -122,6 +135,8 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         EventHub.audioSettingsChanged -= OnAudioSettingsChanged;
         EventHub.gamePaused -= OnGamePaused;
         EventHub.gameOvered -= OnGameOvered;
+        EventHub.bonusRocketPickedUp -= OnRocketPickUp;
+        EventHub.coinsChanged -= OnCoinPickUp;
     }
 
     public void PreRestartGame()
@@ -130,5 +145,68 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         AudioListener.volume = AudioSettings.globalVolume;
         FadeMixerGroup(musicMixer, AudioSettings.musicVolume);
         FadeMixerGroup(uiMixer, AudioSettings.uiVolume);
+    }
+
+    public void OnRocketPickUp()
+    {
+        uiSource.PlayOneShot(rocketPickUpSfx);
+        uiSource.PlayOneShot(rocketStartVox);
+        
+        StopCoroutine(RocketPickUpLoop());
+        StartCoroutine(RocketPickUpLoop());
+    }
+
+    private IEnumerator RocketPickUpLoop()
+    {
+        if(_rocketLoopTimer.IsStarted)
+            _rocketLoopTimer.Stop();
+        
+        _rocketLoopTimer.Start();
+        uiSource.clip = rocketLoopSFX;
+        uiSource.loop = true;
+        uiSource.Play();
+
+        yield return new WaitForSeconds(5);
+
+        uiSource.Stop();
+        uiSource.loop = false;
+        uiSource.clip = null;
+        uiSource.PlayOneShot(rocketEndSFX);
+        _rocketLoopTimer.Stop();
+    }
+
+    public void PlayCookieManPickUp()
+    {
+        uiSource.PlayOneShot(cookieManPickUpSfx);
+    }
+
+    public void PlayJump()
+    {
+        uiSource.PlayOneShot(jumpStartSFX);
+        
+        var clip = jumpVoxes[Random.Range(0, jumpVoxes.Length)];
+        uiSource.PlayOneShot(clip);
+    }
+
+    public void PlaySlide()
+    {
+        uiSource.PlayOneShot(slideVox);
+        uiSource.PlayOneShot(slideSFX);
+    }
+
+    public void PlayStrafe()
+    {
+        uiSource.PlayOneShot(jumpStartSFX);
+    }
+    
+    public void PlayFootSteps()
+    {
+        if(!footStepsSource.isPlaying)
+            footStepsSource.Play();
+    }
+    public void StopFootSteps()
+    {
+        if(footStepsSource.isPlaying)
+            footStepsSource.Stop();
     }
 }

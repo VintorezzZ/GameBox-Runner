@@ -119,14 +119,6 @@ public class Player : MonoBehaviour
     {
         score += moveController.Speed * Time.deltaTime;
     }
-
-    public void CheckForBestScore()
-    {
-        if (score > PlayerPrefs.GetInt("HighScore_distance"))
-        {
-            PlayerPrefs.SetInt("HighScore_distance", Mathf.RoundToInt(score));
-        }
-    }
     
     private void CreateBulletsContainer()
     {
@@ -158,7 +150,6 @@ public class Player : MonoBehaviour
         canMove = false;
         _animator.SetTrigger("dead");
         score = Mathf.RoundToInt(score);
-        CheckForBestScore();
         ApplyCoins();
         
         EventHub.OnGameOvered();

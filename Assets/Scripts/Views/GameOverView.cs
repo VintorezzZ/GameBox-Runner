@@ -10,7 +10,9 @@ namespace Views
     {
         [SerializeField] private Button restartButton;
 
-        [SerializeField] private Text bestScoreText;
+        [SerializeField] private Text scoreValueText;
+        [SerializeField] private GameObject bestScoreText;
+        [SerializeField] private GameObject scoreText;
         
         public override void Initialize()
         {
@@ -27,7 +29,19 @@ namespace Views
 
         private void UpdateBestScore()
         {
-            bestScoreText.text = PlayerPrefs.GetInt("HighScore_distance").ToString();
+            scoreValueText.text = RoomController.Instance.localPlayer.score.ToString();
+
+            if (RoomController.Instance.localPlayer.score > PlayerPrefs.GetInt("HighScore_distance"))
+            {
+                PlayerPrefs.SetInt("HighScore_distance", Mathf.RoundToInt(RoomController.Instance.localPlayer.score));
+                bestScoreText.SetActive(true);
+                scoreText.SetActive(false);
+            }
+            else
+            {
+                bestScoreText.SetActive(false);
+                scoreText.SetActive(true);
+            }
         }
     }
 }

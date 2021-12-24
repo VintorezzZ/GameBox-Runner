@@ -327,6 +327,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1381600989918874713, guid: 39b5ef3bbd6d1184cb3c0fc4964c3eb8, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 8300000, guid: 10987bf5d1843c1449781d7447d5ceeb, type: 3}
+    - target: {fileID: 1381600989918874713, guid: 39b5ef3bbd6d1184cb3c0fc4964c3eb8, type: 3}
       propertyPath: loseSfx
       value: 
       objectReference: {fileID: 8300000, guid: 1d41f04e9d2c4bc4c852cb215c3891e6, type: 3}
@@ -342,6 +346,10 @@ PrefabInstance:
       propertyPath: slideVox
       value: 
       objectReference: {fileID: 8300000, guid: 92483f6fb4d870f4fa6586ebe3486469, type: 3}
+    - target: {fileID: 1381600989918874713, guid: 39b5ef3bbd6d1184cb3c0fc4964c3eb8, type: 3}
+      propertyPath: menuMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a380c7c441669f4da38ed1d825e742b, type: 3}
     - target: {fileID: 1381600989918874713, guid: 39b5ef3bbd6d1184cb3c0fc4964c3eb8, type: 3}
       propertyPath: pickUpSfx
       value: 

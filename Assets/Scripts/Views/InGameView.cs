@@ -46,7 +46,7 @@ namespace Views
         {
             base.Show();
             Clear();
-            SoundManager.Instance.PlayMusic();
+            SoundManager.Instance.PlayInGameMusic();
         }
 
         private void Update()

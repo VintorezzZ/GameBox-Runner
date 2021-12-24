@@ -13,6 +13,7 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     [SerializeField] AudioMixer uiMixer, musicMixer, inGameMixer;
 
     [SerializeField] AudioClip music;
+    [SerializeField] AudioClip menuMusic;
     [SerializeField] AudioClip clickSfx;
     [SerializeField] AudioClip loseSfx;
     [SerializeField] AudioClip loseVox;
@@ -34,7 +35,6 @@ public class SoundManager : SingletonBehaviour<SoundManager>
 
     private Coroutine _fadeCoroutine;
     private Timer _rocketLoopTimer = new Timer();
-    private Timer _pickUpCoinTimer = new Timer();
 
     private bool _gameStarted;
     
@@ -48,6 +48,8 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         AudioListener.volume = AudioSettings.globalVolume;
         FadeMixerGroup(musicMixer, AudioSettings.musicVolume);
         FadeMixerGroup(uiMixer, AudioSettings.uiVolume);
+  
+        PlayMenuMusic();
         
         EventHub.audioSettingsChanged += OnAudioSettingsChanged;
         EventHub.gamePaused += OnGamePaused;
@@ -81,12 +83,7 @@ public class SoundManager : SingletonBehaviour<SoundManager>
     {
         _fadeCoroutine = StartCoroutine(MixerGroupFader.StartFade(audioMixer, exposedParam, duration, targetVolume));
     }
-
-    // public void PlayBoom()
-    // {
-    //     inGameSource.PlayOneShot(boomSfx);
-    // }
-
+    
     public void PlayClick()
     {
         uiSource.PlayOneShot(clickSfx);
@@ -98,16 +95,17 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         uiSource.PlayOneShot(loseVox);
     }
 
-    // public void PlayPickUp()
-    // {
-    //     uiSource.PlayOneShot(pickUpSfx);
-    // }
-
-    public void PlayMusic()
+    public void PlayInGameMusic()
     {
         musicSource.clip = music;
         musicSource.Play();
         _gameStarted = true;
+    }
+
+    public void PlayMenuMusic()
+    {
+        musicSource.clip = menuMusic;
+        musicSource.Play();
     }
     
     public void StopMusic()
@@ -160,6 +158,9 @@ public class SoundManager : SingletonBehaviour<SoundManager>
         AudioListener.volume = AudioSettings.globalVolume;
         FadeMixerGroup(musicMixer, AudioSettings.musicVolume);
         FadeMixerGroup(uiMixer, AudioSettings.uiVolume);
+              
+        PlayMenuMusic();
+        footStepsSource.Stop();
     }
 
     public void OnRocketPickUp()

@@ -1,6 +1,9 @@
 # Runner-BSG
  
-﻿![alt text](screenshots/Gameplay.png "Описание будет тут")
+﻿![alt text](screenshots/screenshot1.png "Описание будет тут")
+﻿![alt text](screenshots/screenshot2.png "Описание будет тут")
+﻿![alt text](screenshots/screenshot3.png "Описание будет тут")
+﻿![alt text](screenshots/screenshot4.png "Описание будет тут")
 
 # Control Scheme
 # Button/ Touch Input	Action it Performs

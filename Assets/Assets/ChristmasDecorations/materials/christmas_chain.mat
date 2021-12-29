@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: christmas_chain
-  m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _SPECULAR_COLOR
+  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -84,7 +84,7 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0.004
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -98,7 +98,8 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
+    - _SampleGI: 0
     - _Shininess: 0
     - _Smoothness: 0
     - _SmoothnessSource: 0
@@ -114,7 +115,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 2.494, g: 2.494, b: 2.494, a: 1}
-    - _SpecColor: {r: 0.19999984, g: 0.19999984, b: 0.19999984, a: 0}
+    - _SpecColor: {r: 0.19998845, g: 0.19998845, b: 0.19998845, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8863548623172017272
 MonoBehaviour:

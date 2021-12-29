@@ -15,7 +15,7 @@ using Views;
         private void Awake()
         {
 #if !UNITY_EDITOR
-            //Application.targetFrameRate = 60;
+            Application.targetFrameRate = 120;
 #endif
             InitializeSingleton();
             

@@ -2,7 +2,7 @@
 using Cinemachine;
 using MyGame.Managers;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using Utils;
 using Views;
@@ -10,11 +10,13 @@ using Views;
     public class GameManager : SingletonBehaviour<GameManager>
     {
         public CinemachineVirtualCamera playerCamera;
-        public PostProcessVolume postProcessVolume;
+        public Volume postProcessVolume;
+        public Camera camera;
         private void Awake()
         {
+#if !UNITY_EDITOR
             Application.targetFrameRate = 60;
-                
+#endif
             InitializeSingleton();
             
             EventHub.gameOvered += OnGameOver;

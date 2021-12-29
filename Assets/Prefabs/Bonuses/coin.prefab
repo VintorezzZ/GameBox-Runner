@@ -143,3 +143,6 @@ MonoBehaviour:
   coinsToAdd: 1
   enableRotation: 1
   rotationSpeed: 0
+  enableFlare: 0
+  flare: {fileID: 0}
+  type: 0

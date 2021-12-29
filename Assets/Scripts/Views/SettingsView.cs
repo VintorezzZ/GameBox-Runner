@@ -1,5 +1,6 @@
 using MyGame.Managers;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Views;
 
@@ -8,6 +9,7 @@ public class SettingsView : View
     [SerializeField] private Button backButton;
     [SerializeField] private Button enterButton;
     [SerializeField] private Toggle postProcessingToggle;
+    [SerializeField] private Toggle fxaaToggle;
     [SerializeField] private Toggle snowToggle;
     
     public InputField playerNameInput;
@@ -27,6 +29,10 @@ public class SettingsView : View
         postProcessingToggle.onValueChanged.AddListener((value) =>
         {
             GameManager.Instance.postProcessVolume.enabled = value;
+        });
+        fxaaToggle.onValueChanged.AddListener((value) =>
+        {
+            GameManager.Instance.camera.GetComponent<UniversalAdditionalCameraData>().antialiasing = value ? AntialiasingMode.FastApproximateAntialiasing : AntialiasingMode.None;
         });
         snowToggle.onValueChanged.AddListener((value) =>
         {

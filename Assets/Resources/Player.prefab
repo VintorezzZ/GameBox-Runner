@@ -5180,7 +5180,7 @@ MonoBehaviour:
   modelName: Santa golden
   modelId: 1
   status: 0
-  cost: 100
+  cost: 1000
 --- !u!1001 &2196256197414952596
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3,22 +3,26 @@ using Cinemachine;
 using MyGame.Managers;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using Utils;
 using Views;
 
     public class GameManager : SingletonBehaviour<GameManager>
     {
-        public CinemachineVirtualCamera playerCamera;
+        public CinemachineVirtualCamera virtualCamera;
+        public Camera mainCamera;
         public Volume postProcessVolume;
-        public Camera camera;
+        public UniversalRenderPipelineAsset lowQualityGraphic;
+        public UniversalRenderPipelineAsset highQualityGraphic;
+
         private void Awake()
         {
 #if !UNITY_EDITOR
             Application.targetFrameRate = 120;
 #endif
             InitializeSingleton();
-            
+
             EventHub.gameOvered += OnGameOver;
 
             SceneManager.sceneLoaded += (scene, mode) =>

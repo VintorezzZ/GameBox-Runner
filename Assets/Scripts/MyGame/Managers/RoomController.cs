@@ -29,8 +29,8 @@ public class RoomController : SingletonBehaviour<RoomController>
         localPlayer = Instantiate(Resources.Load<Player>("Player"), new Vector3(0f, .5f, 10f), Quaternion.identity);
         localPlayer.Init();
         localPlayer.transform.SetParent(transform);
-        GameManager.Instance.playerCamera.Follow = localPlayer.transform;
-        GameManager.Instance.playerCamera.LookAt = localPlayer.transform;
+        GameManager.Instance.virtualCamera.Follow = localPlayer.transform;
+        GameManager.Instance.virtualCamera.LookAt = localPlayer.transform;
         _timerText = ViewManager.GetView<InGameView>().timerText;
     }
 

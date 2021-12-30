@@ -32,10 +32,8 @@ public class SettingsView : View
 
         ApplySavedSettings();
         
-        backButton.onClick.AddListener(() =>
-        {
-            ViewManager.ShowLast();
-        });
+        backButton.onClick.AddListener(ViewManager.ShowLast);
+        
         enterButton.onClick.AddListener(() =>
         {
             PlayerPrefs.SetString("playername", playerNameInput.text);

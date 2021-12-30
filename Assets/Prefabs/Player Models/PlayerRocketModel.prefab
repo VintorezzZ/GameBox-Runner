@@ -211,6 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modelName: rocket
+  modelId: 0
+  status: 0
+  cost: 0
+  playerMeshRenderer: {fileID: 398410864486869855}
 --- !u!1001 &2677787006345312067
 PrefabInstance:
   m_ObjectHideFlags: 0

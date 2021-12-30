@@ -69,6 +69,8 @@ public class PlayerModelsHandler : MonoBehaviour
    {
       DeActivateCurrentModel();
       rocketModel.gameObject.SetActive(true);
+      var actualMaterial = playerModels[currentModelIndex].GetComponent<SkinnedMeshRenderer>().material;
+      rocketModel.playerMeshRenderer.material = actualMaterial; 
 
       yield return new WaitForSeconds(5);
       

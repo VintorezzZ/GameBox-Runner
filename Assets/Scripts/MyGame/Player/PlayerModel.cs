@@ -9,6 +9,8 @@ public class PlayerModel : MonoBehaviour
     public int modelId;
     public SellItemStatus status;
     public int cost;
+    
+    public MeshRenderer playerMeshRenderer;
 
     public void Init()
     {

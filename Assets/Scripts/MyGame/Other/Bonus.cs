@@ -14,17 +14,17 @@ namespace MyGame.Other
     
         private void OnEnable()
         {
-            rotationSpeed = Random.Range(0.5f, 2);
+            rotationSpeed = Random.Range(100f, 200f);
             if(flare)
                 flare.SetActive(enableFlare);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if(!enableRotation)
                 return;
         
-            transform.Rotate(0f, rotationSpeed, 0f);
+            transform.Rotate(0f, rotationSpeed * Time.fixedDeltaTime, 0f);
         }
     }
 }

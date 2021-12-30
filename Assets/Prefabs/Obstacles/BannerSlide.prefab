@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_StaticShadowCaster
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5495240364284219136, guid: 5b1378575c51fc7468e8a678883e4cb6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6cc218bcb959c30439da711a6ae81e38, type: 2}
     - target: {fileID: 919132149155446097, guid: 5b1378575c51fc7468e8a678883e4cb6, type: 3}
       propertyPath: m_Name
       value: banner

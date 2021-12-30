@@ -154,7 +154,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 43ad8c0f1be421d4f9eff9c44349ddcc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3402,11 +3402,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6992928722103715476, guid: e7cbd0396c6a2f64488c28813c7cf3e7, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 118
       objectReference: {fileID: 0}
     - target: {fileID: -6303555829671476168, guid: e7cbd0396c6a2f64488c28813c7cf3e7, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 118
+      objectReference: {fileID: 0}
+    - target: {fileID: 10471896841168162, guid: e7cbd0396c6a2f64488c28813c7cf3e7, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e7cbd0396c6a2f64488c28813c7cf3e7, type: 3}
       propertyPath: m_Name
@@ -3415,6 +3419,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e7cbd0396c6a2f64488c28813c7cf3e7, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571405620195482330, guid: e7cbd0396c6a2f64488c28813c7cf3e7, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7cbd0396c6a2f64488c28813c7cf3e7, type: 3}

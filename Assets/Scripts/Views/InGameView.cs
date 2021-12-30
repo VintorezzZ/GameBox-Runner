@@ -70,7 +70,8 @@ namespace Views
 
         private void UpdateScore(float score)
         {
-            scoreText.text = score.ToString("0");
+            var scoreToInt = Mathf.RoundToInt(score);
+            scoreText.text = string.Format("{0}", scoreToInt);
         }
 
         public void AddHealth(int hp)
@@ -90,7 +91,7 @@ namespace Views
 
         private void UpdateCoins(int coins)
         {
-            coinsText.text = coins.ToString();
+            coinsText.text = string.Format("{0}", coins);
         }
 
         private void OnDestroy()

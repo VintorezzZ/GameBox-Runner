@@ -71,7 +71,7 @@ public class CustomizationView : View
         if(!_playerModelsHandler)
             return;
         
-        ChangePlayerModel(_playerModelsHandler.currentModelIndex);
+        ChangePlayerModel();
         OnPlayerModelChanged(_playerModelsHandler.currentModelIndex);
     }
 
@@ -86,6 +86,16 @@ public class CustomizationView : View
     private void ChangePlayerModel(int side)
     {
         var item = _playerModelsHandler.currentModelIndex + side;
+
+        if (item < 0 || item >= _playerModelsHandler.playerModels.Count)
+            return;
+        
+        _playerModelsHandler.ActivateModel(item);
+    }
+    
+    private void ChangePlayerModel()
+    {
+        var item = _playerModelsHandler.currentModelIndex;
 
         if (item < 0 || item >= _playerModelsHandler.playerModels.Count)
             return;
